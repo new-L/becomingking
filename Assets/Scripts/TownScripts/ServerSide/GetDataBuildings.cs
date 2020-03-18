@@ -1,0 +1,67 @@
+﻿using System.Collections;
+using UnityEngine;
+using System;
+using UnityEngine.Networking;
+
+public class GetDataBuildings : MonoBehaviour
+{
+    //Общие данные, необходимые для постройки зданий
+    readonly string postURLPlayer = "https://becomingking.ru/dbmanager/GetDataBuildings.php";
+
+
+    public static Building[] dataBuildings;
+
+    public void Start()
+    {
+        StartCoroutine(GetBuildings());
+    }
+
+    public IEnumerator GetBuildings()
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("name", ServerData.GlobalUser);//добавление полей к форме отправления
+        UnityWebRequest www = UnityWebRequest.Post(postURLPlayer, form);
+        yield return www.SendWebRequest();//ждем
+        if (www.isNetworkError || www.isHttpError)
+        {
+            Debug.Log("Error: " + www.error);
+            yield break;
+        }
+        else
+        {
+            string json = JsonHelper.fixJson(www.downloadHandler.text);
+            dataBuildings = JsonHelper.FromJson<Building>(json);
+        }
+
+    }
+
+}
+
+[Serializable]
+public class Building
+{
+    //Описание здания
+    public string description;
+    //Название здания
+    public string name;
+    //Стоимость постройки (в золоте)
+    public int costgold;
+    //Стоимость * на уровень для последующей построкйи
+    public double multiplerank;
+    //Начальные бонусы
+    public int startbuff;
+    //Насколько повысится бафф при повышении уровня
+    public double uplvlbuff;
+    //Что конкретно дает бафф %/предмет
+    public string buffmeasurement;
+    //Стоимость постройки (в дереве)
+    public int costwood;
+    //Стоимость постройки (в камне)
+    public int costrock;
+    //Стоимость постройки (в известняке)
+    public int costlimestone;
+    //Стоимость постройки (в пшенице)
+    public int costwheat;
+    //Код здания
+    public string code;
+}

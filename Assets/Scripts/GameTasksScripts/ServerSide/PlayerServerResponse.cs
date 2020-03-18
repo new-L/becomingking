@@ -44,7 +44,6 @@ public class PlayerServerResponse : MonoBehaviour
             else
             {
                 inData = JsonUtility.FromJson<InData>(www.downloadHandler.text);
-                print(www.downloadHandler.text);
                 DataSave(indexer);
             }
         }

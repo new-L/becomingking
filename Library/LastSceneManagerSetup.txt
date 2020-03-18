@@ -1,5 +1,5 @@
 sceneSetups:
-- path: "Assets/Scenes/\u0410uthorization.unity"
+- path: Assets/Scenes/Town.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

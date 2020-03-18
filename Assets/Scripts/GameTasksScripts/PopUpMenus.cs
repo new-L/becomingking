@@ -11,7 +11,7 @@ public class PopUpMenus : MonoBehaviour
 
     void Start()
     {
-        for(int i = 0; i<menu.Length;i++) menu[i].SetActive(false);
+        for(int i = 0; i < menu.Length;i++) menu[i].SetActive(false);
     }
 
 
@@ -22,13 +22,10 @@ public class PopUpMenus : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            CloseMenu();
-        }
+        if (Input.GetKeyDown(KeyCode.Escape)) Close();
     }
 
-    public void CloseMenu()
+    public void Close()
     {
         for (int i = 0; i < menu.Length; i++) if (menu[i].activeSelf) menu[i].SetActive(false);
     }

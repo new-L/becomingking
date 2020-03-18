@@ -45,7 +45,6 @@ public class Authorization : MonoBehaviour
         }
         else
         {  
-            Debug.Log("Server_AUTH: " + www.downloadHandler.text);
             if (www.downloadHandler.text.Equals("1")) { ServerData.GlobalUser = userLogin; SceneManager.LoadScene("GameTasks"); }
             else alertAnimation.AnimationActivate("Пользователя с такими данными не существует!");
             yield break;

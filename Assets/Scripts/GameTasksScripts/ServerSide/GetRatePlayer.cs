@@ -39,7 +39,6 @@ public class GetRatePlayer : MonoBehaviour
             {
                 string json = JsonHelper.fixJson(www.downloadHandler.text);
                 worldRating = JsonHelper.FromJson<WorldRating>(json);
-                print(json);
             }
         setRateInfo.SetWorldRate();
         StartCoroutine(Send());
@@ -60,7 +59,6 @@ public class GetRatePlayer : MonoBehaviour
         }
         else
         {
-            print(www.downloadHandler.text);
             serverText = www.downloadHandler.text;
         }
         PlayerRatingWrite(serverText);
