@@ -21,6 +21,8 @@ public class SetBuildingData : MonoBehaviour
     [SerializeField] private GetResourcePlayer getRS;
     //Картинка награды
     [SerializeField] private Image rewardI;
+    /* Повтор здания */
+    [SerializeField] private ReiterativeBuilding reBuilding;
     public void SetBuildingPlaceInfo()
     {
         int buildingCount = building_place.Length;
@@ -29,10 +31,12 @@ public class SetBuildingData : MonoBehaviour
             if(getPlayerBuildings.playerBuildings[i].building_id == 999)
             {
                 building_place[i].sprite = Resources.Load<Sprite>("buildings_icon/_building_place");
+                building_place[i].GetComponentInChildren<Text>().text = "not builded";
             }
             else
             {
-                building_place[i].sprite = Resources.Load<Sprite>("buildings_icon/_main_building_place");
+                building_place[i].sprite = Resources.Load<Sprite>("buildings_icon/_obelisk_" + getPlayerBuildings.playerBuildings[i].building_id.ToString());
+                building_place[i].GetComponentInChildren<Text>().text = getPlayerBuildings.playerBuildings[i].building_id.ToString();
             }
         }
     }
@@ -58,9 +62,6 @@ public class SetBuildingData : MonoBehaviour
         }
     }
 
-
-
-
     //Отрисовка префабов и установка данных
     void InitializeItemView(GameObject viewGameObject, Building building)
     {
@@ -85,11 +86,11 @@ public class SetBuildingData : MonoBehaviour
                     buildingRockT, buildingLimestoneT, buildingWheatT, buildingRewardT;
     [SerializeField] private int checkBuildNumberAccess;
     //Общая информация о конкретном здании
-    public void BuildingData(Text building_code)
+    public void BuildingData(string building_code)
     {
         foreach (var model in GetDataBuildings.dataBuildings)
         {
-            if (model.code.Equals(building_code.text))
+            if (model.code.Equals(building_code))
             {
                 checkBuildNumberAccess = 0;
                 SetText(model.name, buildingNameT);
@@ -101,8 +102,11 @@ public class SetBuildingData : MonoBehaviour
                 SetText(model.costwheat, buildingWheatT, "wheat");
                 SetRewardImage(model.code);
                 SetText("+" + model.startbuff.ToString(), buildingRewardT);
+                if (reBuilding.ReiterativeBuildingCheck(model)) Attention(true);
+                else Attention(false);
                 if (checkBuildNumberAccess == 5) TownData.IsBuild = true;
                 else { TownData.IsBuild = false; }
+                TownData.BuildingCode = model.code;
                 break;
             }
         }
@@ -135,12 +139,19 @@ public class SetBuildingData : MonoBehaviour
         {
             foreach (var resource in getRS.playerResources)
             {
-                if (resource.code.Equals(resourceName)) isBuild = (target >= resource.count) ? true : false;
+                if (resource.code.Equals(resourceName)) isBuild = (target > resource.count) ? true : false;
                 else continue;
             }
         }
-        else isBuild = (target >= gold.Count) ? true : false;
+        else isBuild = (target > gold.Count) ? true : false;
         
         return isBuild;
     }
+
+    [SerializeField] private GameObject attentionT, buildB;
+    private void Attention(bool variable)
+    {
+        attentionT.SetActive(!variable);
+        buildB.SetActive(variable);
+    } 
 }

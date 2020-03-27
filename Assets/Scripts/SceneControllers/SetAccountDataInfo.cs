@@ -25,8 +25,7 @@ public class SetAccountDataInfo : MonoBehaviour
     {
         //Установка значений валюты игрока
         goldT.text = numberConversion.NumberConverter(gold.Count);
-        diamondT.text = numberConversion.NumberConverter(diamond.Count)
-            ;
+        diamondT.text = numberConversion.NumberConverter(diamond.Count);
         //Установка значений уровня игрока в текстUI
         levelT.text = "Уровень: " + cLevel.Level.ToString();
         //Установка значения количества людей того или иного типа в текстUI

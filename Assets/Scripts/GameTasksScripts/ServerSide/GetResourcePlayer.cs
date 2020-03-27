@@ -37,7 +37,6 @@ public class GetResourcePlayer : MonoBehaviour
             playerResources = JsonHelper.FromJson<PlayerResources>(json);
         }
         setResource.SetResources();
-
     }
 
 }

@@ -40,6 +40,8 @@ public class GetDataBuildings : MonoBehaviour
 [Serializable]
 public class Building
 {
+    //ID здания
+    public int id;
     //Описание здания
     public string description;
     //Название здания

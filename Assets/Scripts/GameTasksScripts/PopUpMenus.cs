@@ -29,6 +29,10 @@ public class PopUpMenus : MonoBehaviour
     {
         for (int i = 0; i < menu.Length; i++) if (menu[i].activeSelf) menu[i].SetActive(false);
     }
+    public void Close(GameObject menu)
+    {
+       menu.SetActive(false);
+    }
 
 
 

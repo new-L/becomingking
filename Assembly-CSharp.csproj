@@ -111,10 +111,13 @@
     <Compile Include="Assets\Scripts\SceneControllers\SetAccountDataInfo.cs" />
     <Compile Include="Assets\Scripts\SceneControllers\SetRateInfo.cs" />
     <Compile Include="Assets\Scripts\SceneControllers\SetResourceInfo.cs" />
+    <Compile Include="Assets\Scripts\TownScripts\ClientSide\BuildingOption.cs" />
     <Compile Include="Assets\Scripts\TownScripts\ClientSide\BuildingPlaceControll.cs" />
     <Compile Include="Assets\Scripts\TownScripts\ClientSide\IsBuildButton.cs" />
     <Compile Include="Assets\Scripts\TownScripts\ClientSide\PrefabBuildingController.cs" />
+    <Compile Include="Assets\Scripts\TownScripts\ClientSide\ReiterativeBuilding.cs" />
     <Compile Include="Assets\Scripts\TownScripts\ClientSide\SetBuildingData.cs" />
+    <Compile Include="Assets\Scripts\TownScripts\ServerSide\Build.cs" />
     <Compile Include="Assets\Scripts\TownScripts\ServerSide\GetDataBuildings.cs" />
     <Compile Include="Assets\Scripts\TownScripts\ServerSide\GetPlayerBuildings.cs" />
     <Compile Include="Assets\Scripts\User\Authorization.cs" />
