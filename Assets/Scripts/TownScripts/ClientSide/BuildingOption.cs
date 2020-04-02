@@ -12,13 +12,13 @@ public class BuildingOption : MonoBehaviour
     {
         buildinOptionB.enabled = false;
         StartCoroutine(build.SendResponse("destroy", buildinOptionB));
-        menu.Close(buildinOption);
+        menu.Close();
     }
 
     public void Upgrade(Button buildinOptionB)
     {
         buildinOptionB.enabled = false;
         StartCoroutine(build.SendResponse("upgrade", buildinOptionB));
-        menu.Close(buildinOption);
+        menu.Close();
     }
 }
