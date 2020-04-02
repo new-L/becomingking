@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HCharacter
   - taskcontroller
+  - MainBuilding
   layers:
   - Default
   - TransparentFX

@@ -30,30 +30,53 @@ public class SetBuildingData : MonoBehaviour
         {
             if(getPlayerBuildings.playerBuildings[i].building_id == 999)
             {
-                building_place[i].sprite = Resources.Load<Sprite>("buildings_icon/_building_place");
+                if (building_place[i].tag.Equals("MainBuilding"))
+                {
+                    building_place[i].sprite = Resources.Load<Sprite>("buildings_icon/_main_building_place");
+                }
+                else 
+                {
+                    building_place[i].sprite = Resources.Load<Sprite>("buildings_icon/_building_place");
+                }
                 building_place[i].GetComponentInChildren<Text>().text = "not builded";
             }
             else
             {
-                building_place[i].sprite = Resources.Load<Sprite>("buildings_icon/_obelisk_" + getPlayerBuildings.playerBuildings[i].building_id.ToString());
+                building_place[i].sprite = Resources.Load<Sprite>("buildings_icon/" + BuildedBuildings(getPlayerBuildings.playerBuildings[i].building_id));
                 building_place[i].GetComponentInChildren<Text>().text = getPlayerBuildings.playerBuildings[i].building_id.ToString();
             }
         }
     }
 
+    private string BuildedBuildings(int id)
+    {
+        string code = "none";
+        foreach(var item in GetDataBuildings.dataBuildings)
+        {
+            if (id == item.id) { code = item.code; break; }
+        }
+        return code;
+    }
 
-    
+
 
  //Инициализация префабов зданий
     public void SetAllBuildingsInfo()
     {
+        print(TownData.BuildingType);
         foreach (Transform child in content)
         {
             Destroy(child.gameObject);
         }
         foreach (var model in GetDataBuildings.dataBuildings)
         {
-            if (model.code.Contains("_obelisk"))
+            if (model.code.Contains("_obelisk") && TownData.BuildingType.Equals("obelisk"))
+            {
+                var instance = GameObject.Instantiate(prefab.gameObject) as GameObject;
+                instance.transform.SetParent(content, false);
+                InitializeItemView(instance, model);
+            }
+            else if(model.code.Contains("_main") && TownData.BuildingType.Equals("main"))
             {
                 var instance = GameObject.Instantiate(prefab.gameObject) as GameObject;
                 instance.transform.SetParent(content, false);

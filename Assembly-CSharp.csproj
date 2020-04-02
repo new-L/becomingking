@@ -117,6 +117,7 @@
     <Compile Include="Assets\Scripts\TownScripts\ClientSide\PrefabBuildingController.cs" />
     <Compile Include="Assets\Scripts\TownScripts\ClientSide\ReiterativeBuilding.cs" />
     <Compile Include="Assets\Scripts\TownScripts\ClientSide\SetBuildingData.cs" />
+    <Compile Include="Assets\Scripts\TownScripts\ClientSide\UpgradeInfoControll.cs" />
     <Compile Include="Assets\Scripts\TownScripts\ServerSide\Build.cs" />
     <Compile Include="Assets\Scripts\TownScripts\ServerSide\GetDataBuildings.cs" />
     <Compile Include="Assets\Scripts\TownScripts\ServerSide\GetPlayerBuildings.cs" />

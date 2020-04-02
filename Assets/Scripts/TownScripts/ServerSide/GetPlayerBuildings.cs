@@ -13,10 +13,6 @@ public class GetPlayerBuildings : MonoBehaviour
     [SerializeField] private SetBuildingData setBuilding;
     private void Start()
     {
-        GetBuilding();
-    }
-    public void GetBuilding()
-    {
         StartCoroutine(BuildingGetter());
     }
     public IEnumerator BuildingGetter()

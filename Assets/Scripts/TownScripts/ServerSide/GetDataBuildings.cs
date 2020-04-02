@@ -32,7 +32,6 @@ public class GetDataBuildings : MonoBehaviour
             string json = JsonHelper.fixJson(www.downloadHandler.text);
             dataBuildings = JsonHelper.FromJson<Building>(json);
         }
-
     }
 
 }
@@ -49,11 +48,11 @@ public class Building
     //Стоимость постройки (в золоте)
     public int costgold;
     //Стоимость * на уровень для последующей построкйи
-    public double multiplerank;
+    public float multiplerank;
     //Начальные бонусы
     public int startbuff;
     //Насколько повысится бафф при повышении уровня
-    public double uplvlbuff;
+    public float uplvlbuff;
     //Что конкретно дает бафф %/предмет
     public string buffmeasurement;
     //Стоимость постройки (в дереве)
