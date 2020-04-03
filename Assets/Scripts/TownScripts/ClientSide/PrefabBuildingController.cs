@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class PrefabBuildingController : MonoBehaviour
 {
     [SerializeField] private Text building_code;
-    [SerializeField] SetBuildingData setData;
-    [SerializeField] IsBuildButton buildButton;
+    [SerializeField] private SetBuildingData setData;
+    [SerializeField] private IsBuildButton buildButton;
+    /* Повтор здания */
+    [SerializeField] private ReiterativeBuilding reBuilding;
     private void Start()
     {
         setData = GameObject.Find("SceneController").GetComponent<SetBuildingData>();
-        buildButton = GameObject.Find("BuildB").GetComponent<IsBuildButton>();
+        reBuilding = GameObject.Find("SceneController").GetComponent<ReiterativeBuilding>();
     }
     private void OnMouseUp()
     {
@@ -22,7 +24,14 @@ public class PrefabBuildingController : MonoBehaviour
     {
         setData.BuildingData(building_code.text);
         gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("buildings_icon/" + building_code.text + "_v1");
-        buildButton.SetButtonSprite("_build_normal");
+        foreach (var model in GetDataBuildings.dataBuildings)
+        {
+            if(model.code.Equals(building_code.text) && reBuilding.ReiterativeBuildingCheck(model))
+            {
+                buildButton = GameObject.Find("BuildB").GetComponent<IsBuildButton>();
+                buildButton.SetButtonSprite("_build_normal");
+            }
+        }
     }
 
     private void OnMouseExit()

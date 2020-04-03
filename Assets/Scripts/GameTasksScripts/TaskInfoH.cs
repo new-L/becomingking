@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -38,6 +38,8 @@ public class TaskInfoH : MonoBehaviour
 
     /*Кнопки с заданиями в соц. заданиях*/
     [SerializeField] GameObject option_1, option_2;
+    //Данные зданий игрока
+    [SerializeField] private GetPlayerBuildings getPlayerBuildings;
 
     /*Список с типом наград социальных заданий*/
     [SerializeField] private List<string> typeRewardSocial = new List<string>() { "socialS", "workerS", "armyS" };
@@ -67,6 +69,23 @@ public class TaskInfoH : MonoBehaviour
                     break;
                 }
 
+        }
+        foreach (var model in GetDataBuildings.dataBuildings)
+        {
+            foreach (var item in getPlayerBuildings.playerBuildings)
+            {
+                if (model.code.Equals("_obelisk_1") && model.id == item.building_id)
+                {
+                    TaskData.BonusPrecent = model.startbuff;
+                    for (int i = 0; i < item.buildinglvl-1;i++)
+                    {
+                        TaskData.BonusPrecent += model.uplvlbuff;
+                    }
+                    TaskData.Bonus = true;
+                    TaskData.BonusBuilding = model.name;
+                    break;
+                }
+            }
         }
         SetAllInfo();
     }

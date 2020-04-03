@@ -105,6 +105,8 @@
     <Compile Include="Assets\Scripts\GameTasksScripts\TaskInfoH.cs" />
     <Compile Include="Assets\Scripts\JsonHelper.cs" />
     <Compile Include="Assets\Scripts\NumberConversion.cs" />
+    <Compile Include="Assets\Scripts\PassiveAbilities\IntitalizeModelAbilities.cs" />
+    <Compile Include="Assets\Scripts\PassiveAbilities\PanelControll.cs" />
     <Compile Include="Assets\Scripts\SceneControllers\AuthorizationBtnController.cs" />
     <Compile Include="Assets\Scripts\SceneControllers\Exit.cs" />
     <Compile Include="Assets\Scripts\SceneControllers\LoadSceneControll.cs" />
@@ -117,6 +119,7 @@
     <Compile Include="Assets\Scripts\TownScripts\ClientSide\PrefabBuildingController.cs" />
     <Compile Include="Assets\Scripts\TownScripts\ClientSide\ReiterativeBuilding.cs" />
     <Compile Include="Assets\Scripts\TownScripts\ClientSide\SetBuildingData.cs" />
+    <Compile Include="Assets\Scripts\TownScripts\ClientSide\UpgradeInfoControll.cs" />
     <Compile Include="Assets\Scripts\TownScripts\ServerSide\Build.cs" />
     <Compile Include="Assets\Scripts\TownScripts\ServerSide\GetDataBuildings.cs" />
     <Compile Include="Assets\Scripts\TownScripts\ServerSide\GetPlayerBuildings.cs" />
