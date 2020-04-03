@@ -25,6 +25,7 @@ ScriptsOnlyBuild:
     - LoadSceneControll
     - NewUser
     - NumberConversion
+    - PanelControll
     - PlayerServerResponse
     - PopUpMenus
     - Population
@@ -55,6 +56,8 @@ ScriptsOnlyBuild:
     - WorkersTask
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.Rider.Editor.dll:
@@ -171,21 +174,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12796}
     - Class: 114
-      Script: {instanceID: 12888}
+      Script: {instanceID: 12890}
     - Class: 114
-      Script: {instanceID: 12914}
+      Script: {instanceID: 12916}
     - Class: 114
-      Script: {instanceID: 12924}
+      Script: {instanceID: 12926}
     - Class: 114
-      Script: {instanceID: 13072}
+      Script: {instanceID: 13074}
     - Class: 114
-      Script: {instanceID: 13138}
+      Script: {instanceID: 13140}
     - Class: 114
-      Script: {instanceID: 13142}
+      Script: {instanceID: 13144}
     - Class: 114
-      Script: {instanceID: 13178}
+      Script: {instanceID: 13180}
     - Class: 114
-      Script: {instanceID: 13210}
+      Script: {instanceID: 13212}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -240,11 +243,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12796}
     - Class: 114
-      Script: {instanceID: 12836}
-    - Class: 114
       Script: {instanceID: 12838}
     - Class: 114
-      Script: {instanceID: 13210}
+      Script: {instanceID: 12840}
+    - Class: 114
+      Script: {instanceID: 13212}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -309,11 +312,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12796}
     - Class: 114
-      Script: {instanceID: 12938}
+      Script: {instanceID: 12940}
     - Class: 114
-      Script: {instanceID: 13142}
+      Script: {instanceID: 13144}
     - Class: 114
-      Script: {instanceID: 13210}
+      Script: {instanceID: 13212}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -382,9 +385,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12796}
     - Class: 114
-      Script: {instanceID: 13054}
+      Script: {instanceID: 13056}
     - Class: 114
-      Script: {instanceID: 13210}
+      Script: {instanceID: 13212}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -493,25 +496,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12796}
     - Class: 114
-      Script: {instanceID: 12888}
+      Script: {instanceID: 12822}
     - Class: 114
-      Script: {instanceID: 12924}
+      Script: {instanceID: 12890}
     - Class: 114
-      Script: {instanceID: 13072}
+      Script: {instanceID: 12926}
     - Class: 114
-      Script: {instanceID: 13138}
+      Script: {instanceID: 13074}
     - Class: 114
-      Script: {instanceID: 13142}
+      Script: {instanceID: 13140}
     - Class: 114
-      Script: {instanceID: 13166}
+      Script: {instanceID: 13144}
     - Class: 114
-      Script: {instanceID: 13178}
+      Script: {instanceID: 13168}
     - Class: 114
-      Script: {instanceID: 13210}
+      Script: {instanceID: 13180}
     - Class: 114
-      Script: {instanceID: 13262}
+      Script: {instanceID: 13212}
     - Class: 114
-      Script: {instanceID: 13276}
+      Script: {instanceID: 13264}
+    - Class: 114
+      Script: {instanceID: 13278}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -578,11 +583,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12796}
     - Class: 114
-      Script: {instanceID: 12938}
+      Script: {instanceID: 12940}
     - Class: 114
-      Script: {instanceID: 13142}
+      Script: {instanceID: 13144}
     - Class: 114
-      Script: {instanceID: 13210}
+      Script: {instanceID: 13212}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -988,7 +993,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: c217112e9915353f50a1698c87ef31c9
+      Hash: 8bf185d4bbddcf9b4a14718b90af8dda
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UpgradeInfoControll
@@ -1078,7 +1083,7 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 9c79a007281e79d0f18126199ebf4656
+      Hash: 03fe4a3edef5f7be1a328b32017dbcde
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BuildingPlaceControll
@@ -1172,6 +1177,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
     className: BeforeAfterTestCommandState
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PanelControll
   - hash:
       serializedVersion: 2
       Hash: 40a6dcaf90309414642eb8013c911cf9
