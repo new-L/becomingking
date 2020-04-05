@@ -12,9 +12,10 @@ public class GetPlayerBuildings : MonoBehaviour
 
     public PlayerBuildings[] playerBuildings;
     [SerializeField] private SetBuildingData setBuilding;
+    [SerializeField] private SetTimerInfo timerInfo;
     private void Start()
     {
-        StartCoroutine(BuildingGetter());
+        //StartCoroutine(BuildingGetter());
     }
     public IEnumerator BuildingGetter()
     {
@@ -33,7 +34,7 @@ public class GetPlayerBuildings : MonoBehaviour
             playerBuildings = JsonHelper.FromJson<PlayerBuildings>(json);
         }
         if(SceneManager.GetActiveScene().name.Equals("Town")) setBuilding.SetBuildingPlaceInfo();
-
+        timerInfo.GetBuildingsBonus();
     }
 }
 

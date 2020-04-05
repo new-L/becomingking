@@ -7557,7 +7557,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.000015258789}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -1662.1573, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1483595215
 MonoBehaviour:
@@ -7862,6 +7862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 525b1854f282c014e91c6645e8a28e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildings: {fileID: 1525914691}
 --- !u!114 &1525914691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8804,7 +8805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1790753633
 RectTransform:
   m_ObjectHideFlags: 0

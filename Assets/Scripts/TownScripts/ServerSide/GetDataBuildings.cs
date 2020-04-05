@@ -10,6 +10,7 @@ public class GetDataBuildings : MonoBehaviour
 
 
     public static Building[] dataBuildings;
+    [SerializeField] private GetPlayerBuildings buildings;
 
     public void Start()
     {
@@ -31,6 +32,7 @@ public class GetDataBuildings : MonoBehaviour
         {
             string json = JsonHelper.fixJson(www.downloadHandler.text);
             dataBuildings = JsonHelper.FromJson<Building>(json);
+            StartCoroutine(buildings.BuildingGetter());
         }
     }
 

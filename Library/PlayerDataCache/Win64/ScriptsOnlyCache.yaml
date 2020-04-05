@@ -21,6 +21,7 @@ ScriptsOnlyBuild:
     - GetRatePlayer
     - GetResourcePlayer
     - Gold
+    - IntitalizeModelAbilities
     - IsBuildButton
     - LoadSceneControll
     - NewUser
@@ -56,8 +57,6 @@ ScriptsOnlyBuild:
     - WorkersTask
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
-    - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.Rider.Editor.dll:
@@ -136,6 +135,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11682}
     - Class: 114
+      Script: {instanceID: 11754}
+    - Class: 114
       Script: {instanceID: 11820}
     - Class: 114
       Script: {instanceID: 12024}
@@ -158,6 +159,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12444}
     - Class: 114
+      Script: {instanceID: 12492}
+    - Class: 114
       Script: {instanceID: 12504}
     - Class: 114
       Script: {instanceID: 12568}
@@ -168,27 +171,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12640}
     - Class: 114
-      Script: {instanceID: 12750}
+      Script: {instanceID: 12730}
     - Class: 114
-      Script: {instanceID: 12784}
+      Script: {instanceID: 12752}
     - Class: 114
-      Script: {instanceID: 12796}
+      Script: {instanceID: 12786}
     - Class: 114
-      Script: {instanceID: 12890}
+      Script: {instanceID: 12798}
     - Class: 114
-      Script: {instanceID: 12916}
+      Script: {instanceID: 12824}
     - Class: 114
-      Script: {instanceID: 12926}
+      Script: {instanceID: 12892}
     - Class: 114
-      Script: {instanceID: 13074}
+      Script: {instanceID: 12918}
     - Class: 114
-      Script: {instanceID: 13140}
+      Script: {instanceID: 12928}
     - Class: 114
-      Script: {instanceID: 13144}
+      Script: {instanceID: 13076}
     - Class: 114
-      Script: {instanceID: 13180}
+      Script: {instanceID: 13142}
     - Class: 114
-      Script: {instanceID: 13212}
+      Script: {instanceID: 13146}
+    - Class: 114
+      Script: {instanceID: 13170}
+    - Class: 114
+      Script: {instanceID: 13182}
+    - Class: 114
+      Script: {instanceID: 13214}
+    - Class: 114
+      Script: {instanceID: 13280}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -241,13 +252,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12084}
     - Class: 114
-      Script: {instanceID: 12796}
-    - Class: 114
-      Script: {instanceID: 12838}
+      Script: {instanceID: 12798}
     - Class: 114
       Script: {instanceID: 12840}
     - Class: 114
-      Script: {instanceID: 13212}
+      Script: {instanceID: 12842}
+    - Class: 114
+      Script: {instanceID: 13214}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -310,13 +321,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12724}
     - Class: 114
-      Script: {instanceID: 12796}
+      Script: {instanceID: 12798}
     - Class: 114
-      Script: {instanceID: 12940}
+      Script: {instanceID: 12942}
     - Class: 114
-      Script: {instanceID: 13144}
+      Script: {instanceID: 13146}
     - Class: 114
-      Script: {instanceID: 13212}
+      Script: {instanceID: 13214}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -383,11 +394,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12504}
     - Class: 114
-      Script: {instanceID: 12796}
+      Script: {instanceID: 12798}
     - Class: 114
-      Script: {instanceID: 13056}
+      Script: {instanceID: 13058}
     - Class: 114
-      Script: {instanceID: 13212}
+      Script: {instanceID: 13214}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -492,31 +503,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12726}
     - Class: 114
-      Script: {instanceID: 12750}
+      Script: {instanceID: 12730}
     - Class: 114
-      Script: {instanceID: 12796}
+      Script: {instanceID: 12752}
     - Class: 114
-      Script: {instanceID: 12822}
+      Script: {instanceID: 12798}
     - Class: 114
-      Script: {instanceID: 12890}
+      Script: {instanceID: 12824}
     - Class: 114
-      Script: {instanceID: 12926}
+      Script: {instanceID: 12892}
     - Class: 114
-      Script: {instanceID: 13074}
+      Script: {instanceID: 12928}
     - Class: 114
-      Script: {instanceID: 13140}
+      Script: {instanceID: 13076}
     - Class: 114
-      Script: {instanceID: 13144}
+      Script: {instanceID: 13142}
     - Class: 114
-      Script: {instanceID: 13168}
+      Script: {instanceID: 13146}
     - Class: 114
-      Script: {instanceID: 13180}
+      Script: {instanceID: 13170}
     - Class: 114
-      Script: {instanceID: 13212}
+      Script: {instanceID: 13182}
     - Class: 114
-      Script: {instanceID: 13264}
+      Script: {instanceID: 13214}
     - Class: 114
-      Script: {instanceID: 13278}
+      Script: {instanceID: 13266}
+    - Class: 114
+      Script: {instanceID: 13280}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -581,13 +594,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12460}
     - Class: 114
-      Script: {instanceID: 12796}
+      Script: {instanceID: 12798}
     - Class: 114
-      Script: {instanceID: 12940}
+      Script: {instanceID: 12942}
     - Class: 114
-      Script: {instanceID: 13144}
+      Script: {instanceID: 13146}
     - Class: 114
-      Script: {instanceID: 13212}
+      Script: {instanceID: 13214}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -945,7 +958,7 @@ ScriptsOnlyBuild:
     className: TextureController
   - hash:
       serializedVersion: 2
-      Hash: bd04dbdd5a68d2d0ee4efd10e8af008e
+      Hash: 84ca7da2d9e9842bbb9f04312708c665
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TaskInfoH
@@ -1089,7 +1102,7 @@ ScriptsOnlyBuild:
     className: BuildingPlaceControll
   - hash:
       serializedVersion: 2
-      Hash: 7425805d3770c4cb048561739b2e9ca0
+      Hash: 96ef752052c70c8e7a5195dd1dfdebff
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PrefabBuildingController
@@ -1141,6 +1154,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: IsBuildButton
+  - hash:
+      serializedVersion: 2
+      Hash: 2ac8310967b1da44da7eef7c089caa97
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: IntitalizeModelAbilities
   - hash:
       serializedVersion: 2
       Hash: 31d85b70e0ca04978e6f0d1dd50b6d7d
@@ -1239,7 +1258,7 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: c65d602b02c3963dbe7f8a65dee93097
+      Hash: 923c40664e344c8781947488b0d5eeb6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TaskSceneController
