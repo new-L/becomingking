@@ -26,17 +26,14 @@ class SendingBonusInfo : MonoBehaviour
         }
         else
         {
-            if (IsOffline)
+            if (IsOffline && !String.IsNullOrEmpty(www.downloadHandler.text))
             {
                 string json = JsonHelper.fixJson(www.downloadHandler.text);
                 bonuses = JsonHelper.FromJson<OfflineBonus>(json);
+                bonusInfo.SetBonus();
             }
         }
         yield return new WaitForSeconds(0.3f);
-        foreach (var item in bonuses)
-        {
-            print(item.allresources);
-        }
     }
 
     public IEnumerator SendOfflineCheck(string offlineCheckType)
@@ -73,8 +70,7 @@ class SendingBonusInfo : MonoBehaviour
 [Serializable]
 public class OfflineBonus
 {
-    public int gold;
-    public int rate;
-    public int allresources;
+    public string type;
+    public int bonus;
 }
 
