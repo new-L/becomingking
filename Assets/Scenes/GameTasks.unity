@@ -1198,6 +1198,7 @@ GameObject:
   - component: {fileID: 415979278}
   - component: {fileID: 415979279}
   - component: {fileID: 415979280}
+  - component: {fileID: 415979281}
   m_Layer: 5
   m_Name: SceneController
   m_TagString: Untagged
@@ -1403,6 +1404,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerInfo: {fileID: 415979279}
   sendInfo: {fileID: 1942896612}
+--- !u!114 &415979281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415979268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba4a84618d3ad7847a0261ce09612ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &425348372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2863,7 +2876,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &722854353
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4275,7 +4288,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &978614492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7990,6 +8003,17 @@ MonoBehaviour:
           m_StringArgument: "\u0410uthorization"
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 415979280}
+        m_MethodName: SaveDateOnQuit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1628624847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9639,6 +9663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b5963f16e7e814c810d6cf9831646e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bonusInfo: {fileID: 415979281}
 --- !u!1 &1953257314
 GameObject:
   m_ObjectHideFlags: 0

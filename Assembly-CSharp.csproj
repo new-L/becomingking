@@ -114,6 +114,7 @@
     <Compile Include="Assets\Scripts\SceneControllers\SetAccountDataInfo.cs" />
     <Compile Include="Assets\Scripts\SceneControllers\SetRateInfo.cs" />
     <Compile Include="Assets\Scripts\SceneControllers\SetResourceInfo.cs" />
+    <Compile Include="Assets\Scripts\Timer\Bonus\SetBonusInfo.cs" />
     <Compile Include="Assets\Scripts\Timer\ServerSide\SendingBonusInfo.cs" />
     <Compile Include="Assets\Scripts\Timer\SetTimerInfo.cs" />
     <Compile Include="Assets\Scripts\Timer\Timer.cs" />

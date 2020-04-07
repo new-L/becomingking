@@ -6,9 +6,13 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] private SetTimerInfo timerInfo;
     [SerializeField] private SendingBonusInfo sendInfo;
+    
+    private void Start()
+    {
+        StartCoroutine(sendInfo.SendOfflineCheck("get"));
+    }
 
-
-    void Update()
+    private void Update()
     {
         if(TimerData.Activate)
         {
@@ -21,8 +25,19 @@ public class Timer : MonoBehaviour
             if (TimerData.CurrentTime == 0)
             {
                 TimerData.Activate = false;
-                StartCoroutine(sendInfo.SendInfo());
+                StartCoroutine(sendInfo.SendInfo(false));
+                timerInfo.GetBuildingsBonus();
             }
         }
+    }
+
+    public void SaveDateOnQuit()
+    {
+        StartCoroutine(sendInfo.SendOfflineCheck("post"));
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveDateOnQuit();
     }
 }
