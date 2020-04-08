@@ -3495,6 +3495,17 @@ MonoBehaviour:
           m_StringArgument: "\u0410uthorization"
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1810188046}
+        m_MethodName: SaveDateOnQuit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &672532824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5184,6 +5195,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1810188046}
+        m_MethodName: SaveDateOnQuit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: GameTasks
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1810188035}
         m_MethodName: JumpToScene
         m_Mode: 5
@@ -8060,6 +8082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b5963f16e7e814c810d6cf9831646e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bonusInfo: {fileID: 0}
 --- !u!1 &1530831411
 GameObject:
   m_ObjectHideFlags: 0

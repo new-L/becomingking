@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class Timer : MonoBehaviour
     
     private void Start()
     {
-        StartCoroutine(sendInfo.SendOfflineCheck("get"));
+        if(SceneManager.GetActiveScene().name.Equals("GameTasks")) StartCoroutine(sendInfo.SendOfflineCheck("get"));
     }
 
     private void Update()
