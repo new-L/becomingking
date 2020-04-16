@@ -30,6 +30,12 @@ public class TaskData : MonoBehaviour
     private static int armySLosses;
     //Переменная для выпадающих кристаллов
     private static int diamondCount;
+    //Переменная, хранящая возможность получить бонус за постройку здания
+    private static bool bonus;
+    //Переменная, хранящая бонус за постройку здания в %
+    private static float bonusPrecent;
+    //Переменная, хранящая навзание постройки
+    private static string bonusBuilding;
 
     public static string TypeTask { get => typeTask; set => typeTask = value; }
     public static int GoldWLosses { get => goldWLosses; set => goldWLosses = value; }
@@ -48,4 +54,7 @@ public class TaskData : MonoBehaviour
     public static int Rating { get => rating; set => rating = value; }
     public static int Timer { get => timer; set => timer = value; }
     public static bool IsComplete { get => isComplete; set => isComplete = value; }
+    public static float BonusPrecent { get => bonusPrecent; set => bonusPrecent = value; }
+    public static bool Bonus { get => bonus; set => bonus = value; }
+    public static string BonusBuilding { get => bonusBuilding; set => bonusBuilding = value; }
 }

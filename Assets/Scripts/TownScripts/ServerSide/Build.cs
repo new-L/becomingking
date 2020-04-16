@@ -18,7 +18,7 @@ public class Build : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("name", ServerData.GlobalUser);//добавление полей к форме отправления
         form.AddField("place", TownData.ChosenPlace);//добавление полей к форме отправления
-        form.AddField("buildingCode", TownData.BuildingCode);//добавление полей к форме отправления
+        form.AddField("code", TownData.BuildingCode);//добавление полей к форме отправления
         form.AddField("option", option);//добавление полей к форме отправления
         UnityWebRequest www = UnityWebRequest.Post(postURL, form);
         yield return www.SendWebRequest();//ждем

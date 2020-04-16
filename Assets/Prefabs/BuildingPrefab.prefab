@@ -167,6 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   building_code: {fileID: 9187331794640652742}
+  setData: {fileID: 0}
+  buildButton: {fileID: 0}
 --- !u!1 &4475805776923325939
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,6 +34,7 @@ public class GetResourcePlayer : MonoBehaviour
         else
         {
             string json = JsonHelper.fixJson(www.downloadHandler.text);
+            print(www.downloadHandler.text);
             playerResources = JsonHelper.FromJson<PlayerResources>(json);
         }
         setResource.SetResources();

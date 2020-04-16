@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class TaskSceneController : MonoBehaviour
 {
 
-    [SerializeField] private GameObject loadPanel, gamePanel,resultPanel, damagePanel,resourceGO, clickHPPanel, loadAnimator;
+    [SerializeField] private GameObject loadPanel, gamePanel,resultPanel, damagePanel,resourceGO, clickHPPanel, loadAnimator, bonusPanel;
     [SerializeField] private SpriteRenderer resourceI;
     [SerializeField] private Transform resourceITransform;
     [SerializeField] private Image backgroundI, clickHPI, damageI;
@@ -17,8 +17,8 @@ public class TaskSceneController : MonoBehaviour
     [SerializeField] private GameObject monster;
     [SerializeField] private ServerController sController;
     /**Элементы UI в результатах таска**/
-    public Image main_resourceI, diamondI, expI, ratingI;
-    public Text main_resourceT, diamondT, expT, ratingT;
+    public Image main_resourceI, diamondI, expI, ratingI, bonusI;
+    public Text main_resourceT, diamondT, expT, ratingT, bonusTitleT, bonusCountT;
     /****/
     [SerializeField] private NumberConversion numberConversion;
 
@@ -46,7 +46,6 @@ public class TaskSceneController : MonoBehaviour
         if (TaskData.TypeTask == "worker")
         {
             resourceGO.SetActive(true);
-            print(TaskData.TypeResource);
             //Устанока background'а
             backgroundI.sprite = Resources.Load<Sprite>("task_scene/background/task_scene_" + TaskData.TypeResource + "_background_winter");
             //Установка основных картинок UI
@@ -105,6 +104,7 @@ public class TaskSceneController : MonoBehaviour
 
     public void SetResultUIData()
     {
+        
         resourceGO.SetActive(false);
         Destroy(monster);
         ShowPanels(false, true, true);
@@ -114,8 +114,8 @@ public class TaskSceneController : MonoBehaviour
         clickHPPanel.SetActive(false);
         damagePanel.SetActive(false);
         //Устанавливаем данные по заданию в UI-элементы
-        if (TaskData.TypeTask.Equals("worker")) SetImage(main_resourceI, "resources_icon/" + TaskData.TypeResource);
-        else SetImage(main_resourceI, "goldIcon");
+        if (TaskData.TypeTask.Equals("worker")) { SetImage(main_resourceI, "resources_icon/" + TaskData.TypeResource);  }
+        else { SetImage(main_resourceI, "goldIcon"); SetImage(bonusI, "goldIcon"); }
         SetImage(diamondI, "diamondIcon");
         SetImage(expI, "task_scene/objects/task_scene_exp_icon");
         SetImage(ratingI, "task_scene/objects/task_scene_rating_icon");
@@ -123,6 +123,21 @@ public class TaskSceneController : MonoBehaviour
         SetText(diamondT, TaskData.DiamondCount);
         SetText(expT, TaskData.Exptotask);
         SetText(ratingT, TaskData.Rating);
+        if (TaskData.Bonus)
+        {
+            bonusPanel.SetActive(true);
+            if (TaskData.TypeTask.Equals("worker")) SetImage(bonusI, "resources_icon/" + TaskData.TypeResource);
+            else SetImage(bonusI, "goldIcon");
+            double flag = Math.Round((TaskData.ResourceReward * TaskData.BonusPrecent)/100);
+            bonusTitleT.text = TaskData.BonusBuilding;
+            print(flag);
+            SetText(bonusCountT, Convert.ToInt32(flag));
+            TaskData.ResourceReward += Convert.ToInt32(flag);
+        }
+        else
+        {
+            bonusPanel.SetActive(false);
+        }
         StartCoroutine(StartLoad());
     }
     private void SetImage(Image image, string path)
@@ -137,9 +152,9 @@ public class TaskSceneController : MonoBehaviour
 
     private IEnumerator StartLoad()
     {
-        yield return new WaitForSeconds(.8f);
         //Начинаем анимацию загрузки
         loadAnimator.SetActive(true);
+        yield return new WaitForSeconds(.8f);
         StartCoroutine(sController.SaveDateWorker());
     }
     

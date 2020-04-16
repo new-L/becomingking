@@ -19,7 +19,7 @@ public class ArmyTask : Task, ITaskRules
         SetTypeReward();
         Losses();
         SetRating();
-        TaskData.DiamondCount = 0;
+        TaskData.DiamondCount = 0;        
     }
     public void TimerProccessing()
     {

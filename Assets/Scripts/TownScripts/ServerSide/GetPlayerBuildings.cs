@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class GetPlayerBuildings : MonoBehaviour
 {
@@ -11,9 +12,10 @@ public class GetPlayerBuildings : MonoBehaviour
 
     public PlayerBuildings[] playerBuildings;
     [SerializeField] private SetBuildingData setBuilding;
+    [SerializeField] private SetTimerInfo timerInfo;
     private void Start()
     {
-        StartCoroutine(BuildingGetter());
+        //StartCoroutine(BuildingGetter());
     }
     public IEnumerator BuildingGetter()
     {
@@ -31,8 +33,8 @@ public class GetPlayerBuildings : MonoBehaviour
             string json = JsonHelper.fixJson(www.downloadHandler.text);
             playerBuildings = JsonHelper.FromJson<PlayerBuildings>(json);
         }
-        setBuilding.SetBuildingPlaceInfo();
-
+        if(SceneManager.GetActiveScene().name.Equals("Town")) setBuilding.SetBuildingPlaceInfo();
+        timerInfo.GetBuildingsBonus();
     }
 }
 

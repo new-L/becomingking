@@ -9,7 +9,7 @@ public class BuildingPlaceControll : MonoBehaviour
     [SerializeField] private GameObject blurPanel, buildOption, blockedImage;
     [SerializeField] private SetBuildingData setData;
     [SerializeField] private UpgradeInfoControll upgradeInfo;
-    [SerializeField] private Button upgradeB;
+    [SerializeField] private Button upgradeB, infoB;
 
     public void ChosenPlace()
     {
@@ -41,7 +41,8 @@ public class BuildingPlaceControll : MonoBehaviour
         else
         {
             menus.Open(buildOption);
-            TownData.BuildingCode = gameObject.GetComponentInChildren<Text>().text;
+            TownData.BuildingID = gameObject.GetComponentInChildren<Text>().text;
+            infoB.enabled = false;
             upgradeInfo.GradeDataH();
             if (upgradeInfo.GradeOportCheck())
             {

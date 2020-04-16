@@ -25,14 +25,14 @@ public class UpgradeInfoControll : MonoBehaviour
     [SerializeField] private Gold playerGold;
     public void OnPointer()
     {
-            goldT.text = "-" + conversion.NumberConverter((long)gold);
-            woodT.text = "-" + conversion.NumberConverter((long)wood);
-            wheatT.text = "-" + conversion.NumberConverter((long)wheat);
-            limestoneT.text = "-" + conversion.NumberConverter((long)limestone);
-            rockT.text = "-" + conversion.NumberConverter((long)rock);
-            rewardT.text = reward.ToString() + "(+" + multiple.ToString() + ")";
-            rewardI.sprite = Resources.Load<Sprite>("town_reward_icons/_reward_obelisk_" + TownData.BuildingCode);
-            menus.Open(upgradePanel);
+        goldT.text = "-" + conversion.NumberConverter((long)gold);
+        woodT.text = "-" + conversion.NumberConverter((long)wood);
+        wheatT.text = "-" + conversion.NumberConverter((long)wheat);
+        limestoneT.text = "-" + conversion.NumberConverter((long)limestone);
+        rockT.text = "-" + conversion.NumberConverter((long)rock);
+        rewardT.text = reward.ToString() + "(+" + multiple.ToString() + ")";
+        rewardI.sprite = Resources.Load<Sprite>("town_reward_icons/_reward" + TownData.BuildingCode);
+        menus.Open(upgradePanel);
     }
     public void UnPointer()
     {
@@ -42,8 +42,9 @@ public class UpgradeInfoControll : MonoBehaviour
     {
         foreach(var item in GetDataBuildings.dataBuildings)
         {
-            if(item.code.Equals("_obelisk_" + TownData.BuildingCode))
+            if(item.id == Convert.ToInt32(TownData.BuildingID))
             {
+                TownData.BuildingCode = item.code;
                 gold = item.costgold;
                 wood = item.costwood;
                 wheat = item.costwheat;
@@ -53,7 +54,7 @@ public class UpgradeInfoControll : MonoBehaviour
                 reward = item.startbuff;
                 foreach (var playerB in playerBuildings.playerBuildings) 
                 {
-                    if (playerB.building_id == Convert.ToInt32(TownData.BuildingCode))
+                    if (playerB.building_id == Convert.ToInt32(TownData.BuildingID))
                     {
                         if (playerB.buildinglvl > 1)
                         {
@@ -82,7 +83,7 @@ public class UpgradeInfoControll : MonoBehaviour
         bool returned = true;
         foreach (var item in playerResources.playerResources)
         {
-            switch(item.name)
+            switch(item.code)
             {
                 case "wood": flag[0] = item.count >= wood ? true : false; break;
                 case "rock": flag[1] = item.count >= rock ? true : false; break;
@@ -93,7 +94,11 @@ public class UpgradeInfoControll : MonoBehaviour
         flag[4] = playerGold.Count >= gold ? true : false;
         foreach(var item in flag)
         {
-            if (!item) returned = false;
+            if (!item)
+            {
+                returned = false;
+                break;
+            }
         }
         return returned;
     }

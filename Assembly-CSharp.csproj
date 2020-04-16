@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\DBManager.cs" />
     <Compile Include="Assets\Scripts\Data\ServerData.cs" />
     <Compile Include="Assets\Scripts\Data\TaskData.cs" />
+    <Compile Include="Assets\Scripts\Data\TimerData.cs" />
     <Compile Include="Assets\Scripts\Data\TownData.cs" />
     <Compile Include="Assets\Scripts\GameTasksScripts\ClientSide\Currency\Diamond.cs" />
     <Compile Include="Assets\Scripts\GameTasksScripts\ClientSide\Currency\Gold.cs" />
@@ -105,12 +106,18 @@
     <Compile Include="Assets\Scripts\GameTasksScripts\TaskInfoH.cs" />
     <Compile Include="Assets\Scripts\JsonHelper.cs" />
     <Compile Include="Assets\Scripts\NumberConversion.cs" />
+    <Compile Include="Assets\Scripts\PassiveAbilities\IntitalizeModelAbilities.cs" />
+    <Compile Include="Assets\Scripts\PassiveAbilities\PanelControll.cs" />
     <Compile Include="Assets\Scripts\SceneControllers\AuthorizationBtnController.cs" />
     <Compile Include="Assets\Scripts\SceneControllers\Exit.cs" />
     <Compile Include="Assets\Scripts\SceneControllers\LoadSceneControll.cs" />
     <Compile Include="Assets\Scripts\SceneControllers\SetAccountDataInfo.cs" />
     <Compile Include="Assets\Scripts\SceneControllers\SetRateInfo.cs" />
     <Compile Include="Assets\Scripts\SceneControllers\SetResourceInfo.cs" />
+    <Compile Include="Assets\Scripts\Timer\Bonus\SetBonusInfo.cs" />
+    <Compile Include="Assets\Scripts\Timer\ServerSide\SendingBonusInfo.cs" />
+    <Compile Include="Assets\Scripts\Timer\SetTimerInfo.cs" />
+    <Compile Include="Assets\Scripts\Timer\Timer.cs" />
     <Compile Include="Assets\Scripts\TownScripts\ClientSide\BuildingOption.cs" />
     <Compile Include="Assets\Scripts\TownScripts\ClientSide\BuildingPlaceControll.cs" />
     <Compile Include="Assets\Scripts\TownScripts\ClientSide\IsBuildButton.cs" />

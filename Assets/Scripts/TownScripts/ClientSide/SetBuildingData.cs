@@ -129,7 +129,8 @@ public class SetBuildingData : MonoBehaviour
                 else Attention(false);
                 if (checkBuildNumberAccess == 5) TownData.IsBuild = true;
                 else { TownData.IsBuild = false; }
-                TownData.BuildingCode = model.code;
+                TownData.BuildingCode = model.code.ToString();
+                TownData.BuildingID = model.id.ToString();
                 break;
             }
         }
