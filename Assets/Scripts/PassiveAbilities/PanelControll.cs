@@ -14,4 +14,16 @@ public class PanelControll : MonoBehaviour
     {
         button.GetComponent<Image>().color = new Color32(255, 255, 255, 132);
     }
+
+
+
+    public void HuntEnter(GameObject button)
+    {
+        button.GetComponent<Image>().color = new Color32(133, 133, 133, 255);
+    }
+
+    public void HuntExit(GameObject button)
+    {
+        button.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+    }
 }
