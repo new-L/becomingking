@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6916298227902229499}
   - component: {fileID: 8260182579504136680}
+  - component: {fileID: 3638131877755117879}
   m_Layer: 0
   m_Name: Volcano Level Set_Platformer - Ground 09
   m_TagString: Untagged
@@ -81,3 +82,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &3638131877755117879
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940590044112393824}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.1171875, y: 0.5}
+      - {x: -0.1171875, y: 0.4296875}
+      - {x: -0.25, y: -0.046875}
+      - {x: -0.25, y: -0.3046875}
+      - {x: -0.234375, y: -0.3984375}
+      - {x: -0.1171875, y: -0.5}
+      - {x: 0.5, y: -0.5}
+      - {x: 0.5, y: 0.5}
