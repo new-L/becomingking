@@ -7,6 +7,9 @@ TagManager:
   - HCharacter
   - taskcontroller
   - MainBuilding
+  - PlayerCam
+  - Character
+  - GameBorder
   layers:
   - Default
   - TransparentFX
@@ -16,8 +19,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Character
+  - Collide
   - 
   - 
   - 

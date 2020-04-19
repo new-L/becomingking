@@ -7,7 +7,7 @@ public class Character : MonoBehaviour
     //РЕФАКТОРИТЬ
 
     [SerializeField] private float speed = 3.0f;
-    [SerializeField] private float jumpForce = 12.5f;
+    [SerializeField] private float jumpForce = 12f;
 
     private bool isGrounded = false;
 
@@ -22,11 +22,17 @@ public class Character : MonoBehaviour
     private Animator animator;
     private SpriteRenderer sprite;
 
+    //Поля, хранящие номареа слоев(для прыжка снизу платформы)
+    private int character, collide;
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sprite = GetComponentInChildren<SpriteRenderer>();
+
+        character = LayerMask.NameToLayer("Character");
+        collide = LayerMask.NameToLayer("Collide");
     }
 
     private void FixedUpdate()
@@ -37,8 +43,11 @@ public class Character : MonoBehaviour
     private void Update()
     {
         if (isGrounded) State = CharState.Idle;
+        if (Input.GetKey(KeyCode.LeftShift)) { speed = 5f; }
+        else speed = 3f;
         if (Input.GetButton("Horizontal")) Move();
         if (isGrounded && Input.GetButtonDown("Jump")) Jump();
+        CheckPlatform();
     }
 
     private void Move()
@@ -54,6 +63,7 @@ public class Character : MonoBehaviour
     private void Jump()
     {
         rigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+        
     }
 
     private void CheckGround()
@@ -62,6 +72,18 @@ public class Character : MonoBehaviour
 
         isGrounded = colliders.Length > 1;
     }
+    private void CheckPlatform()
+    {
+        if (rigidbody.velocity.y > 0)
+        {
+            Physics2D.IgnoreLayerCollision(character, collide, true);
+        }
+        else
+        {
+            Physics2D.IgnoreLayerCollision(character, collide, false);
+        }
+    }
+
 }
 
 public enum CharState

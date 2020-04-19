@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1328283480715057529}
   - component: {fileID: 1328283480715057528}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,9 +94,9 @@ GameObject:
   - component: {fileID: 5596676750332644644}
   - component: {fileID: 6922434527764456038}
   - component: {fileID: 9017422860639119431}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,7 +152,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 2.2
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -168,8 +168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355bea4d94ceb5c4a8e8dc4a6e4186b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.5
-  jumpForce: 12.5
+  speed: 3
+  jumpForce: 12
 --- !u!70 &9017422860639119431
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7676582339640615742}
   - component: {fileID: 7830896569578971020}
   - component: {fileID: 9129154870430157664}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Volcano Level Set_Platformer - Wooden Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
