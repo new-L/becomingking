@@ -12,7 +12,7 @@ public class CameraControll : MonoBehaviour
     private Camera camera;
     private void Awake()
     {
-        if (!target) target = FindObjectOfType<Character>().gameObject;
+        if (!target) target = FindObjectOfType<CharacterController2D>().gameObject;
         camera = GetComponent<Camera>();
     }
 
@@ -20,7 +20,7 @@ public class CameraControll : MonoBehaviour
     {
         CameraZoom();
         targetPosition = new Vector3(target.transform.position.x, target.transform.position.y + 0.5f, transform.position.z);
-        if(!target.GetComponentInChildren<SpriteRenderer>().flipX)
+        if(target.transform.localScale.x > 0f)
         {
             targetPosition = new Vector3(targetPosition.x + followAhead, targetPosition.y, targetPosition.z);
         }

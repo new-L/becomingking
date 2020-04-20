@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4149993587723665520}
   - component: {fileID: 2322663709596937403}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Volcano Level Set_Platformer - Wooden Barrel (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8934232619790128931}
-  m_Layer: 0
+  - component: {fileID: 1149115256628783007}
+  - component: {fileID: 1690243920932597406}
+  m_Layer: 10
   m_Name: 1x3 Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,6 +116,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1149115256628783007
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7693076007296263959}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.5, y: 0.42}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.85, y: 1.72}
+  m_EdgeRadius: 0
+--- !u!50 &1690243920932597406
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7693076007296263959}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 100
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8649264051360617254
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 488208742425417372}
   - component: {fileID: 463285974124224811}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Volcano Level Set_Platformer - Wooden Barrel (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7897746298781865430}
   - component: {fileID: 4382557043452511323}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Volcano Level Set_Platformer - Wooden Barrel (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -105,7 +105,8 @@
     <Compile Include="Assets\Scripts\GameTasksScripts\TaskClickerSide\TaskSceneController.cs" />
     <Compile Include="Assets\Scripts\GameTasksScripts\TaskInfoH.cs" />
     <Compile Include="Assets\Scripts\Hunt\Camera\CameraControll.cs" />
-    <Compile Include="Assets\Scripts\Hunt\Character\Character.cs" />
+    <Compile Include="Assets\Scripts\Hunt\Character\CharacterController2D.cs" />
+    <Compile Include="Assets\Scripts\Hunt\Character\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Hunt\Oclussion\Oclussion.cs" />
     <Compile Include="Assets\Scripts\JsonHelper.cs" />
     <Compile Include="Assets\Scripts\NumberConversion.cs" />
