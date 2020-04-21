@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5867041364160128286}
   - component: {fileID: 2941756825291462343}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 1x1 Ground 02 Volcano
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1926784342913699660}
   - component: {fileID: 83000612710643744}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 1x2 Bridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9059444529953309165}
   - component: {fileID: 3666275493274940404}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Volcano Level Set_Platformer - Wooden Bridge (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7871986239294084738}
   - component: {fileID: 4445989307781005670}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Volcano Level Set_Platformer - Wooden Bridge (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

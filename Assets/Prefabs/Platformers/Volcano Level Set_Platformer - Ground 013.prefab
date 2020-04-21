@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1038473518013299459}
   - component: {fileID: 6010935501185273327}
   - component: {fileID: 6146427862689152702}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Volcano Level Set_Platformer - Ground 013
   m_TagString: Untagged
   m_Icon: {fileID: 0}

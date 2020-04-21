@@ -4,25 +4,17 @@ using UnityEngine;
 
 public class Oclussion : MonoBehaviour
 {
-    private void Start()
+    public GameObject character;
+    public GameObject enemy;
+    void Start()
     {
-        //gameObject.SetActive(false);
+        character = GameObject.FindGameObjectWithTag("Character");
+        InvokeRepeating("LookForPlayer", 0, 0.1f);
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    void LookForPlayer()
     {
-        print(other.tag);
-        if (other.gameObject.tag.Equals("PlayerCam"))
-        {
-            gameObject.SetActive(true);
-        }
+        float distance = Vector2.Distance(character.transform.position, enemy.transform.position);
+        enemy.SetActive(distance < 25f);
     }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        print(other.tag);
-        if (other.tag == "PlayerCam")
-        {
-            gameObject.SetActive(false);
-        }
-    }
 }

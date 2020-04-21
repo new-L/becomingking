@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5319803637591727612}
   - component: {fileID: 7249333000426059040}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 1x1 Ground 02 Volcano (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5317126705122283670}
   - component: {fileID: 1838426060664404589}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 1x1 Ground 02 Volcano (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8769066066681539252}
   - component: {fileID: 7631123990145574641}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 1x2 Ground 02 Volcano
   m_TagString: Untagged
   m_Icon: {fileID: 0}

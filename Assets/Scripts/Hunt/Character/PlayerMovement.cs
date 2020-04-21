@@ -2,22 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : Unit
 {
     [SerializeField] private CharacterController2D controller;
-
-    [SerializeField] private float horizontalMove = 0f;
-
-    [SerializeField] private float moveSpeed = 25f;
+    [SerializeField] private Animator animator;
 
     private bool jump = false;
     private bool crouch = false;
-
-    [SerializeField] private Animator animator;
-
     private void Start()
     {
         animator = GetComponent<Animator>();
+        moveSpeed = 25f;
     }
 
     private void Update()
