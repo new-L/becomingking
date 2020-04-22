@@ -19,12 +19,11 @@ public class PlayerMovement : Unit
     {
         animator.SetInteger("State", 0);
         horizontalMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
-        if(Input.GetButton("Horizontal")) animator.SetInteger("State", 1);
+        if (Input.GetButton("Horizontal")) animator.SetInteger("State", 1);
         if (Input.GetButtonDown("Jump")) jump = true;
         if (Input.GetButtonDown("Crouch")) crouch = true;
         else if (Input.GetButtonUp("Crouch")) crouch = false;
-
-        if(!controller.Grounded) animator.SetInteger("State", 2);
+        if (!controller.Grounded) animator.SetInteger("State", 2);
     }
 
     private void FixedUpdate()

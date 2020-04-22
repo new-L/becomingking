@@ -106,7 +106,9 @@
     <Compile Include="Assets\Scripts\GameTasksScripts\TaskInfoH.cs" />
     <Compile Include="Assets\Scripts\Hunt\Camera\CameraControll.cs" />
     <Compile Include="Assets\Scripts\Hunt\Character\CharacterController2D.cs" />
+    <Compile Include="Assets\Scripts\Hunt\Character\PlayerAtack.cs" />
     <Compile Include="Assets\Scripts\Hunt\Character\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Hunt\Enemy\AttackCheck.cs" />
     <Compile Include="Assets\Scripts\Hunt\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Hunt\Oclussion\Oclussion.cs" />
     <Compile Include="Assets\Scripts\Hunt\Unit.cs" />
