@@ -11,6 +11,8 @@ TagManager:
   - Character
   - GameBorder
   - StartLava
+  - PortalIn
+  - PortalOut
   layers:
   - Default
   - TransparentFX
@@ -25,8 +27,8 @@ TagManager:
   - Boxes & Barrels
   - Ground
   - Enemy
-  - 
-  - 
+  - Wall
+  - Portal
   - 
   - 
   - 

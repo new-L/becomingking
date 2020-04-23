@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99cc596c25e156f479642200ad7cf7f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 5503422678306699228}
 --- !u!1 &6550396166122606337
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,23 +323,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5780ba586f25a041973e27ae387f35a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 95
+  moveSpeed: 85
+  timeBtwAttack: 0
+  startTimeBtwAttack: 0.5
+  atackPoint: {fileID: 1712737091465496029}
+  atackRange: 0.5
+  maxHealth: 0
+  currentHealth: 0
+  energy: 0
+  damage: 0
   enemy_Rigidbody: {fileID: 0}
   enemy_Animator: {fileID: 0}
+  alive: {fileID: 6550396167152781051}
+  character: {fileID: 0}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 11776
+  characterMask:
+    serializedVersion: 2
+    m_Bits: 256
+  thePLayer: {fileID: 0}
   groundCheckDistance: 0.95
   wallCheckDistance: 0.1
   playerCheckDistance: 6
   groundCheck: {fileID: 5898151911722709780}
   wallCheck: {fileID: 8539205046889741711}
   playerCheck: {fileID: 5840728892957403109}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 3584
-  characterMask:
-    serializedVersion: 2
-    m_Bits: 256
-  alive: {fileID: 6550396167152781051}
-  character: {fileID: 0}
+  canAttack: 0
 --- !u!70 &2038360599
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

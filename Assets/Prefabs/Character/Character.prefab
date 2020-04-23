@@ -255,10 +255,10 @@ BoxCollider2D:
   m_Offset: {x: 0.14558971, y: 1.5113671}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.2, y: 3.8}
+    newSize: {x: 5.2, y: 3.8}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 7703
+    m_Bits: 15895
   m_GroundCheck: {fileID: 1483823184}
   m_CeilingCheck: {fileID: 414904802}
   m_CrouchDisableCollider: {fileID: 1107639690}
@@ -306,8 +306,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0
+  timeBtwAttack: 0
+  startTimeBtwAttack: 0.5
+  atackPoint: {fileID: 0}
+  atackRange: 0.5
+  maxHealth: 0
+  currentHealth: 0
   controller: {fileID: 1107639691}
   animator: {fileID: 0}
+  portalIn: {fileID: 0}
+  portalOut: {fileID: 0}
 --- !u!212 &6919495476792338443
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -371,11 +379,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0
-  animator: {fileID: 0}
-  atackPoint: {fileID: 1152266119004724081}
-  atackRange: 0.5
   timeBtwAttack: 0
   startTimeBtwAttack: 0.7
+  atackPoint: {fileID: 1152266119004724081}
+  atackRange: 0.5
+  maxHealth: 0
+  currentHealth: 0
+  animator: {fileID: 0}
+  allEnemies: []
   wahtIsEnemy:
     serializedVersion: 2
     m_Bits: 4096

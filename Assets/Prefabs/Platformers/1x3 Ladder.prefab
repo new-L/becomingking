@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 928063121917599005}
   - component: {fileID: 3562743263982605003}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Volcano Level Set_Platformer - Ladder (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5245576059591076724}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: 1x3 Ladder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2737399677009474558}
   - component: {fileID: 1792807309001080522}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Volcano Level Set_Platformer - Ladder (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 637594163176182460}
   - component: {fileID: 7995177859008273579}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Volcano Level Set_Platformer - Ladder (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

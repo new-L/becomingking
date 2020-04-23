@@ -2,34 +2,62 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : Unit
+public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private CharacterController2D controller;
     [SerializeField] private Animator animator;
+    [SerializeField] private GameObject portalIn, portalOut;
+    [SerializeField] private PlayerAtack playerDyingCheck;
+    //Детекд порталов
+    public static bool isPortalIn, isPortalOut;
+    //Movement
+    [SerializeField] protected float moveSpeed;
+    protected float horizontalMove = 0f;
 
     private bool jump = false;
     private bool crouch = false;
+    private void Awake()
+    {
+        portalIn = GameObject.FindGameObjectWithTag("PortalIn");
+        portalOut = GameObject.FindGameObjectWithTag("PortalOut");
+        playerDyingCheck = GetComponent<PlayerAtack>();
+        animator = GetComponent<Animator>();
+    }
     private void Start()
     {
-        animator = GetComponent<Animator>();
         moveSpeed = 25f;
     }
-
     private void Update()
     {
-        animator.SetInteger("State", 0);
-        horizontalMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
-        if (Input.GetButton("Horizontal")) animator.SetInteger("State", 1);
-        if (Input.GetButtonDown("Jump")) jump = true;
-        if (Input.GetButtonDown("Crouch")) crouch = true;
-        else if (Input.GetButtonUp("Crouch")) crouch = false;
-        if (!controller.Grounded) animator.SetInteger("State", 2);
-    }
+        if (!playerDyingCheck.isDying)
+        {
+            animator.SetInteger("State", 0);
+            horizontalMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
+            if (Input.GetButton("Horizontal")) animator.SetInteger("State", 1);
+            if (Input.GetButtonDown("Jump")) jump = true;
+            if (Input.GetButton("Crouch")) crouch = true;
+            else if (Input.GetButtonUp("Crouch")) crouch = false;
+            if (!controller.Grounded) animator.SetInteger("State", 2);
 
+            if ((isPortalIn || isPortalOut) && Input.GetKeyDown(KeyCode.F)) ToPortal();
+        }
+    }
     private void FixedUpdate()
     {
-        //Движение персонажа
-        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
-        jump = false;
+        if (!playerDyingCheck.isDying)
+        {
+            controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+            jump = false;
+        }
     }
+
+    private void ToPortal()
+    {
+        if (isPortalIn) controller.Rigidbody2D.position = new Vector2(portalOut.transform.position.x, portalOut.transform.position.y);
+        else if (isPortalOut) controller.Rigidbody2D.position = new Vector2(portalIn.transform.position.x, portalIn.transform.position.y);
+    }
+
+
+
+
 }

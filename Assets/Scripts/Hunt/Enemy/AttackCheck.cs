@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class AttackCheck : MonoBehaviour
 {
+    public Enemy enemy;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag.Equals("Character")) Enemy.canAttack = true;
+        if (collision.tag.Equals("Character")) enemy.canAttack = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag.Equals("Character")) Enemy.canAttack = false;
+        if (collision.tag.Equals("Character")) enemy.canAttack = false;
     }
 }

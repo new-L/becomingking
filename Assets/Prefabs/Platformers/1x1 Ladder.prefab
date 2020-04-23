@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5590719808321359154}
   - component: {fileID: 6778652806847129365}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: 1x1 Ladder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
