@@ -24,8 +24,10 @@ public class Unit : MonoBehaviour
     protected int
         damage,                 //damage of character
         maxHealth,              //maximum character health 
-        currentHealth,          //current helath character
-        energy;                 //energy for player
+        currentHealth,          //current health character
+        maxEnergy;              //maximum energy for player
+    [SerializeField] public float 
+        currentEnergy;           //current energy for player
 
     public bool isDying = false;
 }

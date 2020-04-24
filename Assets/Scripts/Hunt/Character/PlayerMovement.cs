@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private CharacterController2D controller;
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject portalIn, portalOut;
-    [SerializeField] private PlayerAtack playerDyingCheck;
+    [SerializeField] private PlayerStatement playerDyingCheck;
     //Детекд порталов
     public static bool isPortalIn, isPortalOut;
     //Movement
@@ -16,11 +17,13 @@ public class PlayerMovement : MonoBehaviour
 
     private bool jump = false;
     private bool crouch = false;
+
+    public UnityEvent EnergyBarChange;
     private void Awake()
     {
         portalIn = GameObject.FindGameObjectWithTag("PortalIn");
         portalOut = GameObject.FindGameObjectWithTag("PortalOut");
-        playerDyingCheck = GetComponent<PlayerAtack>();
+        playerDyingCheck = GetComponent<PlayerStatement>();
         animator = GetComponent<Animator>();
     }
     private void Start()
@@ -33,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetInteger("State", 0);
             horizontalMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
+            if (Input.GetKey(KeyCode.LeftShift) && Input.GetButton("Horizontal")) Sprint();
+            if (Input.GetKeyUp(KeyCode.LeftShift)) animator.speed = 1f;
             if (Input.GetButton("Horizontal")) animator.SetInteger("State", 1);
             if (Input.GetButtonDown("Jump")) jump = true;
             if (Input.GetButton("Crouch")) crouch = true;
@@ -41,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
             if ((isPortalIn || isPortalOut) && Input.GetKeyDown(KeyCode.F)) ToPortal();
         }
+        
     }
     private void FixedUpdate()
     {
@@ -48,6 +54,10 @@ public class PlayerMovement : MonoBehaviour
         {
             controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
             jump = false;
+        }
+        else
+        {
+            controller.Move(0, false, false);
         }
     }
 
@@ -57,6 +67,16 @@ public class PlayerMovement : MonoBehaviour
         else if (isPortalOut) controller.Rigidbody2D.position = new Vector2(portalIn.transform.position.x, portalIn.transform.position.y);
     }
 
+    private void Sprint()
+    {
+        if (playerDyingCheck.CurrentEnergy > 0)
+        {
+            horizontalMove = Input.GetAxisRaw("Horizontal") * moveSpeed * 1.2f;
+            playerDyingCheck.CurrentEnergy -= .1f;
+            EnergyBarChange.Invoke();
+            animator.speed = 1.8f;
+        }
+    }
 
 
 

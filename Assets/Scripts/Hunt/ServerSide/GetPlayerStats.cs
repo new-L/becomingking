@@ -9,7 +9,6 @@ public class GetPlayerStats : MonoBehaviour
     readonly string postURL = "https://becomingking.ru/dbmanager/playerInfo.php";
 
     public static PlayerStatsInfo playerStats;
-    public PlayerAtack player;
 
     public UnityEvent AllDataREcieved;
     public void Start()

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Enemy : Unit, IDamageble
 {
@@ -9,7 +10,8 @@ public class Enemy : Unit, IDamageble
     [SerializeField] private GameObject alive, character;
     [SerializeField] private LayerMask whatIsGround;//Слой для детектеда конца платформы или стены
     [SerializeField] private LayerMask characterMask;//Слой для детектеда игрока
-    [SerializeField] private PlayerAtack thePLayer;
+    [SerializeField] private PlayerStatement thePLayer;
+    public UnityEvent TakeTheDamage;
 
     private Collider2D hitCharacterCheck;
     //Проверка расстояний до стены, платфор и игрока
@@ -33,12 +35,15 @@ public class Enemy : Unit, IDamageble
 
     public bool canAttack;//Поле для проверки возможности атаки игрока
 
+    public int MaxHeath { get { return maxHealth; } }
+    public int CurrentHealth { get { return currentHealth; } }
+
     private void Awake()
     {
         enemy_Rigidbody = gameObject.GetComponent<Rigidbody2D>();
         enemy_Animator = gameObject.GetComponent<Animator>();
         character = GameObject.FindGameObjectWithTag("Character");
-        thePLayer = character.GetComponent<PlayerAtack>();
+        thePLayer = character.GetComponent<PlayerStatement>();
     }
 
     private void Start()
@@ -140,16 +145,23 @@ public class Enemy : Unit, IDamageble
     //Обработчик получения урона врага
     public void TakeDamage(int takenDamage)
     {
-        currentHealth -= takenDamage;
-        if (currentHealth <= 0) Dying();
+        if (!isDying)
+        {
+            enemy_Animator.SetTrigger("Hurt");
+            currentHealth -= takenDamage;
+            TakeTheDamage.Invoke();
+            if (currentHealth <= 0) Dying();
+        }
     }
 
     public void Dying()
     {
-        gameObject.GetComponent<Collider2D>().enabled = false;
         isDying = true;
         enemy_Animator.SetTrigger("Dying");
-        Destroy(gameObject, 10f);
+        Oclussion oclussion = FindObjectOfType<Oclussion>();
+        oclussion.DeleteEnemy(gameObject);
+        Destroy(gameObject, 3f);
+
     }
 
 
@@ -168,8 +180,5 @@ public class Enemy : Unit, IDamageble
         else
             alive.transform.localRotation = Quaternion.Euler(.0f, .0f, .0f);
     }
-
-
-
 
 }

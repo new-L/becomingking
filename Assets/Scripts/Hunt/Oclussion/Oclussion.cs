@@ -5,16 +5,35 @@ using UnityEngine;
 public class Oclussion : MonoBehaviour
 {
     public GameObject character;
-    public GameObject enemy;
-    void Start()
+    [SerializeField] private GameObject[] enemiesPrefab;
+    [SerializeField] private List<GameObject> enemies;
+    private void Start()
     {
         character = GameObject.FindGameObjectWithTag("Character");
-        InvokeRepeating("LookForPlayer", 0, 0.1f);
+        enemiesPrefab = GameObject.FindGameObjectsWithTag("Enemy");
+        enemies.AddRange(enemiesPrefab);
+        InvokeRepeating("LookForPlayer", 0, 0.2f);
     }
-    void LookForPlayer()
+    private void LookForPlayer()
     {
-        float distance = Vector2.Distance(character.transform.position, enemy.transform.position);
-        enemy.SetActive(distance < 25f);
+        foreach (var item in enemies)
+        {
+            float distance = Vector2.Distance(character.transform.position, item.transform.position);
+            if (distance < 25f)
+            {
+                item.SetActive(true);
+            }
+            else if (distance > 25f)
+            {
+                item.SetActive(false);
+            }
+        }
+    }
+
+
+    public void DeleteEnemy(GameObject enemy)
+    {
+        enemies.Remove(enemy);
     }
 
 }

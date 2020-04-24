@@ -305,17 +305,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdfc0db913e295940b03bc3ae567e4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
-  timeBtwAttack: 0
-  startTimeBtwAttack: 0.5
-  atackPoint: {fileID: 0}
-  atackRange: 0.5
-  maxHealth: 0
-  currentHealth: 0
   controller: {fileID: 1107639691}
   animator: {fileID: 0}
   portalIn: {fileID: 0}
   portalOut: {fileID: 0}
+  playerDyingCheck: {fileID: 0}
+  moveSpeed: 0
+  EnergyBarChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: SetEnergyBar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!212 &6919495476792338443
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -383,13 +392,30 @@ MonoBehaviour:
   startTimeBtwAttack: 0.7
   atackPoint: {fileID: 1152266119004724081}
   atackRange: 0.5
+  damage: 0
   maxHealth: 0
   currentHealth: 0
+  maxEnergy: 0
+  currentEnergy: 0
+  isDying: 0
   animator: {fileID: 0}
-  allEnemies: []
   wahtIsEnemy:
     serializedVersion: 2
     m_Bits: 4096
+  HealthBarChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: SetHealthBar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8343720998120620761
 GameObject:
   m_ObjectHideFlags: 0

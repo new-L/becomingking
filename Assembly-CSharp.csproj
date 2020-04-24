@@ -106,14 +106,19 @@
     <Compile Include="Assets\Scripts\GameTasksScripts\TaskInfoH.cs" />
     <Compile Include="Assets\Scripts\Hunt\Camera\CameraControll.cs" />
     <Compile Include="Assets\Scripts\Hunt\Character\CharacterController2D.cs" />
-    <Compile Include="Assets\Scripts\Hunt\Character\PlayerAtack.cs" />
     <Compile Include="Assets\Scripts\Hunt\Character\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Hunt\Character\PlayerStatement.cs" />
+    <Compile Include="Assets\Scripts\Hunt\Character\SetCharacterStats.cs" />
     <Compile Include="Assets\Scripts\Hunt\Enemy\AttackCheck.cs" />
     <Compile Include="Assets\Scripts\Hunt\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Hunt\Enemy\EnemyHealthBar.cs" />
+    <Compile Include="Assets\Scripts\Hunt\Enemy\OnHealthChange.cs" />
     <Compile Include="Assets\Scripts\Hunt\IDamageble.cs" />
     <Compile Include="Assets\Scripts\Hunt\Oclussion\Oclussion.cs" />
     <Compile Include="Assets\Scripts\Hunt\Portal.cs" />
     <Compile Include="Assets\Scripts\Hunt\ServerSide\GetPlayerStats.cs" />
+    <Compile Include="Assets\Scripts\Hunt\TrapsTrigger.cs" />
+    <Compile Include="Assets\Scripts\Hunt\UI\PlayerBarts.cs" />
     <Compile Include="Assets\Scripts\Hunt\Unit.cs" />
     <Compile Include="Assets\Scripts\JsonHelper.cs" />
     <Compile Include="Assets\Scripts\NumberConversion.cs" />
@@ -141,7 +146,6 @@
     <Compile Include="Assets\Scripts\TownScripts\ServerSide\GetPlayerBuildings.cs" />
     <Compile Include="Assets\Scripts\User\Authorization.cs" />
     <Compile Include="Assets\Scripts\User\NewUser.cs" />
-    <Compile Include="Assets\SetCharacterStats.cs" />
     <None Include="Assets\Shaders\Blur.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/BecomingKing/Game/BecomingKing/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

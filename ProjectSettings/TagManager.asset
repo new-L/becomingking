@@ -13,6 +13,9 @@ TagManager:
   - StartLava
   - PortalIn
   - PortalOut
+  - Enemy
+  - Trap
+  - Lava
   layers:
   - Default
   - TransparentFX
