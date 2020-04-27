@@ -110,6 +110,7 @@
     <Compile Include="Assets\Scripts\Hunt\Character\PlayerStatement.cs" />
     <Compile Include="Assets\Scripts\Hunt\Character\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\Hunt\Character\SetCharacterStats.cs" />
+    <Compile Include="Assets\Scripts\Hunt\Data\HuntLevelData.cs" />
     <Compile Include="Assets\Scripts\Hunt\Enemy\AttackCheck.cs" />
     <Compile Include="Assets\Scripts\Hunt\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Hunt\Enemy\EnemyHealthBar.cs" />
@@ -122,6 +123,7 @@
     <Compile Include="Assets\Scripts\Hunt\ServerSide\GetPlayerStats.cs" />
     <Compile Include="Assets\Scripts\Hunt\TrapsTrigger.cs" />
     <Compile Include="Assets\Scripts\Hunt\UI\PlayerBarts.cs" />
+    <Compile Include="Assets\Scripts\Hunt\UI\PlayerItemsCount.cs" />
     <Compile Include="Assets\Scripts\Hunt\Unit.cs" />
     <Compile Include="Assets\Scripts\JsonHelper.cs" />
     <Compile Include="Assets\Scripts\NumberConversion.cs" />

@@ -19,6 +19,12 @@ TagManager:
   - StatsItemRespawn
   - HealthPickup
   - EnergyPickup
+  - CointPickup
+  - CurrencyItemPickup
+  - ChessPickup
+  - KeyItemPickup
+  - GoldKey
+  - SilverKey
   layers:
   - Default
   - TransparentFX
