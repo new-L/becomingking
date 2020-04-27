@@ -29,7 +29,6 @@ public class PlayerBarts : MonoBehaviour
     public void SetHealthBar()
     {
         HealthBarPrecent();
-        print(healthPrecent);
         if (healthPrecent > 0) healthBar.rectTransform.localScale = new Vector2(healthPrecent, healthBar.rectTransform.localScale.y);
         else healthBar.rectTransform.localScale = new Vector2(0, healthBar.rectTransform.localScale.y);
     }

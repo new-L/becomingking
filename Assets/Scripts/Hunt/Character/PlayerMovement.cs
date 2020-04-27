@@ -60,11 +60,10 @@ public class PlayerMovement : MonoBehaviour
             controller.Move(0, false, false);
         }
     }
-
     private void ToPortal()
     {
-        if (isPortalIn) controller.Rigidbody2D.position = new Vector2(portalOut.transform.position.x, portalOut.transform.position.y);
-        else if (isPortalOut) controller.Rigidbody2D.position = new Vector2(portalIn.transform.position.x, portalIn.transform.position.y);
+        if (isPortalIn) gameObject.transform.position = new Vector2(portalOut.transform.position.x, portalOut.transform.position.y);
+        else if (isPortalOut) gameObject.transform.position = new Vector2(portalIn.transform.position.x, portalIn.transform.position.y);
     }
 
     private void Sprint()
@@ -72,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
         if (playerDyingCheck.CurrentEnergy > 0)
         {
             horizontalMove = Input.GetAxisRaw("Horizontal") * moveSpeed * 1.2f;
-            playerDyingCheck.CurrentEnergy -= .1f;
+            playerDyingCheck.CurrentEnergy -= .04f;
             EnergyBarChange.Invoke();
             animator.speed = 1.8f;
         }

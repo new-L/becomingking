@@ -16,6 +16,9 @@ TagManager:
   - Enemy
   - Trap
   - Lava
+  - StatsItemRespawn
+  - HealthPickup
+  - EnergyPickup
   layers:
   - Default
   - TransparentFX

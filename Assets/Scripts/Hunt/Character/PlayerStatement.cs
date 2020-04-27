@@ -7,19 +7,21 @@ public class PlayerStatement : Unit, IDamageble
 {
     [SerializeField] private Animator animator;
 
+    private PlayerStats stats;
+
     public LayerMask wahtIsEnemy;
 
-    public int MaxHealth { get { return maxHealth; } }
-    public int CurrentHealth { get { return currentHealth; } }
-    public float CurrentEnergy { get { return currentEnergy; } set { currentEnergy = value; } }
-    public float MaxEnergy { get { return maxEnergy; }  }
-
     public UnityEvent HealthBarChange;
+    public int MaxHealth { get { return maxHealth; } }
+    public int CurrentHealth { get { return currentHealth; } set { currentHealth = value; } }
+    public float CurrentEnergy { get { return currentEnergy; } set { currentEnergy = value; } }
+    public float MaxEnergy { get { return maxEnergy; } }
+
     private void Start()
     {
         animator = GetComponent<Animator>();
+        stats = GetComponent<PlayerStats>();
     }
-
     public void WriteStats()
     {
         maxHealth = GetPlayerStats.playerStats.health;

@@ -15,7 +15,7 @@ public class TrapsTrigger : MonoBehaviour
         if (collision.tag.Equals("Character"))
         {
             if (gameObject.tag.Equals("Lava")) player.TakeDamage(player.MaxHealth / 100 * 15);
-            else if(gameObject.tag.Equals("Trap")) player.Dying();
+            else if(gameObject.tag.Equals("Trap")) player.TakeDamage(player.MaxHealth);
         }
         
     }

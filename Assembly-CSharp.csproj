@@ -108,6 +108,7 @@
     <Compile Include="Assets\Scripts\Hunt\Character\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\Hunt\Character\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Hunt\Character\PlayerStatement.cs" />
+    <Compile Include="Assets\Scripts\Hunt\Character\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\Hunt\Character\SetCharacterStats.cs" />
     <Compile Include="Assets\Scripts\Hunt\Enemy\AttackCheck.cs" />
     <Compile Include="Assets\Scripts\Hunt\Enemy\Enemy.cs" />
@@ -115,6 +116,8 @@
     <Compile Include="Assets\Scripts\Hunt\Enemy\OnHealthChange.cs" />
     <Compile Include="Assets\Scripts\Hunt\IDamageble.cs" />
     <Compile Include="Assets\Scripts\Hunt\Oclussion\Oclussion.cs" />
+    <Compile Include="Assets\Scripts\Hunt\Pickup\ItemRespawn.cs" />
+    <Compile Include="Assets\Scripts\Hunt\Pickup\StatsPickupTrigger.cs" />
     <Compile Include="Assets\Scripts\Hunt\Portal.cs" />
     <Compile Include="Assets\Scripts\Hunt\ServerSide\GetPlayerStats.cs" />
     <Compile Include="Assets\Scripts\Hunt\TrapsTrigger.cs" />

@@ -136,7 +136,7 @@ public class Enemy : Unit, IDamageble
         {
             if(hitCharacterCheck.tag.Equals(character.tag))
             {
-                thePLayer.TakeDamage(80);
+                thePLayer.TakeDamage(damage);
             }
         }
     }
@@ -169,7 +169,7 @@ public class Enemy : Unit, IDamageble
     {
         maxHealth = GetPlayerStats.playerStats.level * 132 + Random.Range(10,100);
         currentHealth = maxHealth;
-        damage = GetPlayerStats.playerStats.level * 10 + Random.Range(1, 12);
+        damage = GetPlayerStats.playerStats.level * 6 + Random.Range(1, 12);
     }
     //Разворот в противоположную стороны
     private void Flip()
