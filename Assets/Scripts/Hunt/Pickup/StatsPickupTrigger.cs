@@ -8,6 +8,7 @@ public class StatsPickupTrigger : MonoBehaviour
     private PlayerStatement m_Player;
     private ItemRespawn m_Respawns;
     private PlayerItemsCount playerUI;
+    private FinishPoint finish;
 
     public bool isPickupItem = false;
     private bool isCoinChessClose = false;
@@ -18,6 +19,7 @@ public class StatsPickupTrigger : MonoBehaviour
         m_Player = FindObjectOfType<PlayerStatement>();
         m_Respawns = FindObjectOfType<ItemRespawn>();
         playerUI = FindObjectOfType<PlayerItemsCount>();
+        finish = FindObjectOfType<FinishPoint>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -72,6 +74,22 @@ public class StatsPickupTrigger : MonoBehaviour
                             gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("ChessClose");
                             isCoinChessClose = true;
                         }
+                        break;
+                    }
+                case "GoldKey":
+                    {
+                        FinishPoint.goldKey = true;
+                        if (FinishPoint.goldKey && FinishPoint.silverKey) { FinishPoint.goalCheck.Add(true); finish.Finish(); }
+                        playerUI.SetColorIcon(playerUI._goldeKey, 255, 255, 255, 255);
+                        m_Respawns.InActiveItem(gameObject.transform.parent.gameObject, m_Respawns.respawnKeyPoints);
+                        break;
+                    }
+                case "SilverKey":
+                    {
+                        FinishPoint.silverKey = true;
+                        if (FinishPoint.goldKey && FinishPoint.silverKey){ FinishPoint.goalCheck.Add(true); finish.Finish(); }
+                    playerUI.SetColorIcon(playerUI._silverKey, 255, 255, 255, 255);
+                        m_Respawns.InActiveItem(gameObject.transform.parent.gameObject, m_Respawns.respawnKeyPoints);
                         break;
                     }
             }

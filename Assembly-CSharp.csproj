@@ -111,10 +111,12 @@
     <Compile Include="Assets\Scripts\Hunt\Character\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\Hunt\Character\SetCharacterStats.cs" />
     <Compile Include="Assets\Scripts\Hunt\Data\HuntLevelData.cs" />
+    <Compile Include="Assets\Scripts\Hunt\DyingTrigger.cs" />
     <Compile Include="Assets\Scripts\Hunt\Enemy\AttackCheck.cs" />
     <Compile Include="Assets\Scripts\Hunt\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Hunt\Enemy\EnemyHealthBar.cs" />
     <Compile Include="Assets\Scripts\Hunt\Enemy\OnHealthChange.cs" />
+    <Compile Include="Assets\Scripts\Hunt\FinishPoint.cs" />
     <Compile Include="Assets\Scripts\Hunt\IDamageble.cs" />
     <Compile Include="Assets\Scripts\Hunt\Oclussion\Oclussion.cs" />
     <Compile Include="Assets\Scripts\Hunt\Pickup\ItemRespawn.cs" />

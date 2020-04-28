@@ -25,6 +25,9 @@ TagManager:
   - KeyItemPickup
   - GoldKey
   - SilverKey
+  - StartPoint
+  - FinishPoint
+  - DyingTrigger
   layers:
   - Default
   - TransparentFX

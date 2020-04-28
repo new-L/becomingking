@@ -5,6 +5,9 @@ TextureImporter:
   - first:
       213: 5873018040958719067
     second: Volcano Level Set_Environment - Red Flag_0
+  - first:
+      213: -1300923837931839845
+    second: Volcano Level Set_Environment - Red Flag_0
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -103,8 +106,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b541ecaaac6218150800000000000000
-      internalID: 5873018040958719067
+      spriteID: b9e1c3879a032fde0800000000000000
+      internalID: -1300923837931839845
       vertices: []
       indices: 
       edges: []

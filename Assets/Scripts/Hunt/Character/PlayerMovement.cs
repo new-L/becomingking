@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private CharacterController2D controller;
     [SerializeField] private Animator animator;
-    [SerializeField] private GameObject portalIn, portalOut;
+    [SerializeField] private GameObject portalIn, portalOut, start;
     [SerializeField] private PlayerStatement playerDyingCheck;
     //Детекд порталов
     public static bool isPortalIn, isPortalOut;
@@ -23,12 +23,14 @@ public class PlayerMovement : MonoBehaviour
     {
         portalIn = GameObject.FindGameObjectWithTag("PortalIn");
         portalOut = GameObject.FindGameObjectWithTag("PortalOut");
+        start = GameObject.FindGameObjectWithTag("StartPoint");
         playerDyingCheck = GetComponent<PlayerStatement>();
         animator = GetComponent<Animator>();
     }
     private void Start()
     {
         moveSpeed = 25f;
+        gameObject.transform.position = start.transform.position;
     }
     private void Update()
     {
@@ -59,6 +61,12 @@ public class PlayerMovement : MonoBehaviour
         {
             controller.Move(0, false, false);
         }
+    }
+    public void Spawn()
+    {
+        playerDyingCheck.isDying = false;
+        playerDyingCheck.WriteStats();
+        gameObject.transform.position = start.transform.position;
     }
     private void ToPortal()
     {

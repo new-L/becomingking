@@ -11,8 +11,9 @@ public class Enemy : Unit, IDamageble
     [SerializeField] private LayerMask whatIsGround;//Слой для детектеда конца платформы или стены
     [SerializeField] private LayerMask characterMask;//Слой для детектеда игрока
     [SerializeField] private PlayerStatement thePLayer;
+    [SerializeField] private PlayerItemsCount playerUI;
+    [SerializeField] private FinishPoint finish;
     public UnityEvent TakeTheDamage;
-
     private Collider2D hitCharacterCheck;
     //Проверка расстояний до стены, платфор и игрока
     [SerializeField]
@@ -44,12 +45,14 @@ public class Enemy : Unit, IDamageble
         enemy_Animator = gameObject.GetComponent<Animator>();
         character = GameObject.FindGameObjectWithTag("Character");
         thePLayer = character.GetComponent<PlayerStatement>();
+        finish = FindObjectOfType<FinishPoint>();
     }
 
     private void Start()
     {
         facingDirection = 1;
         timeBtwAttack = 2f;
+        playerUI = FindObjectOfType<PlayerItemsCount>();
     }
     private void FixedUpdate()
     {
@@ -161,7 +164,10 @@ public class Enemy : Unit, IDamageble
         Oclussion oclussion = FindObjectOfType<Oclussion>();
         oclussion.DeleteEnemy(gameObject);
         Destroy(gameObject, 3f);
-
+        playerUI.monsterCount--;
+        if (playerUI.monsterCount == 0) { FinishPoint.allMonsters = true; FinishPoint.goalCheck.Add(true); finish.Finish(); }
+        playerUI._monsterCount.text = "x" + playerUI.monsterCount;
+        playerUI.SetColorIcon(playerUI._monsters, 255, 255, 255, 255);
     }
 
 

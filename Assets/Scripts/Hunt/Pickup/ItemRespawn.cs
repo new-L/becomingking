@@ -10,13 +10,15 @@ public class ItemRespawn : MonoBehaviour
 
     [SerializeField] private List<GameObject> m_statsPrefab;
     [SerializeField] private List<GameObject> m_currencyPrefab;
+    [SerializeField] private List<GameObject> m_keyPrefab;
 
 
     [SerializeField] public Dictionary<GameObject, bool> respawnPoints = new Dictionary<GameObject, bool>();
     [SerializeField] public Dictionary<GameObject, bool> respawnCurrencyPoints = new Dictionary<GameObject, bool>();
+    [SerializeField] public Dictionary<GameObject, bool> respawnKeyPoints = new Dictionary<GameObject, bool>();
     [SerializeField] private GameObject[] respawnPoint;
     [SerializeField] private GameObject[] respawnCurrencyPoint;
-
+    [SerializeField] private GameObject[] respawnKeyPoint;
 
     [SerializeField] private GameObject coinPrefab;
     [SerializeField] private GameObject diamondPrefab;
@@ -24,11 +26,17 @@ public class ItemRespawn : MonoBehaviour
     [SerializeField] private GameObject healthPrefab;
     [SerializeField] private GameObject energyPrefab;
 
+    [SerializeField] private GameObject goldKeyPrefab;
+    [SerializeField] private GameObject silverKeyPrefab;
+
 
     private void Start()
     {
         respawnPoint = GameObject.FindGameObjectsWithTag("StatsItemRespawn");
         respawnCurrencyPoint = GameObject.FindGameObjectsWithTag("CurrencyItemPickup");
+        respawnKeyPoint = GameObject.FindGameObjectsWithTag("KeyItemPickup");
+        foreach(var item in respawnKeyPoint)
+            respawnKeyPoints.Add(item, false);
         foreach (var item in respawnPoint)
             respawnPoints.Add(item, false);
         foreach (var item in respawnCurrencyPoint)
@@ -40,12 +48,37 @@ public class ItemRespawn : MonoBehaviour
             CreateItem(coinPrefab, m_currencyPrefab);
             CreateItem(coinPrefab, m_currencyPrefab);
         }
+        CreateItem(goldKeyPrefab, m_keyPrefab);
+        CreateItem(silverKeyPrefab, m_keyPrefab);
+        SpawnKeys();
         Spawn(respawnPoints, m_statsPrefab);
         Spawn(respawnCurrencyPoints, m_currencyPrefab);
     }
 
 
+    private void SpawnKeys()
+    {
+        int random = Random.Range(0, respawnKeyPoint.Length);
 
+        m_keyPrefab.ElementAt(0).transform.SetParent(respawnKeyPoints.ElementAt(random).Key.transform); 
+        m_keyPrefab.ElementAt(0).SetActive(true);
+        m_keyPrefab.ElementAt(0).transform.position = respawnKeyPoints.ElementAt(random).Key.transform.position;
+        respawnKeyPoints[respawnKeyPoints.ElementAt(random).Key] = true;
+        random = Random.Range(0, respawnKeyPoint.Length);
+        foreach(var item in respawnKeyPoints.ToList()){
+            if (!respawnKeyPoints.ElementAt(random).Value)
+            {
+                m_keyPrefab.ElementAt(1).transform.SetParent(respawnKeyPoints.ElementAt(random).Key.transform);
+                m_keyPrefab.ElementAt(1).SetActive(true);
+                m_keyPrefab.ElementAt(1).transform.position = respawnKeyPoints.ElementAt(random).Key.transform.position;
+                respawnKeyPoints[respawnKeyPoints.ElementAt(random).Key] = true;
+            }
+            else
+            {
+                random = Random.Range(0, respawnKeyPoint.Length);
+            }
+        }
+    }
 
     private void Spawn(Dictionary<GameObject, bool> spawnList, List<GameObject> prefabList)
     {
