@@ -5483,7 +5483,7 @@ PrefabInstance:
     - target: {fileID: 2288784549420201923, guid: 1e9775b72d24d3d408c57984f69b95eb,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2288784549420201923, guid: 1e9775b72d24d3d408c57984f69b95eb,
         type: 3}
@@ -5524,6 +5524,66 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Colors.m_NormalColor.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288784549420201923, guid: 1e9775b72d24d3d408c57984f69b95eb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288784549420201923, guid: 1e9775b72d24d3d408c57984f69b95eb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288784549420201923, guid: 1e9775b72d24d3d408c57984f69b95eb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1810188035}
+    - target: {fileID: 2288784549420201923, guid: 1e9775b72d24d3d408c57984f69b95eb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: JumpToScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288784549420201923, guid: 1e9775b72d24d3d408c57984f69b95eb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288784549420201923, guid: 1e9775b72d24d3d408c57984f69b95eb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Hunt_Volcano_Level
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288784549420201923, guid: 1e9775b72d24d3d408c57984f69b95eb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288784549420201923, guid: 1e9775b72d24d3d408c57984f69b95eb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288784549420201923, guid: 1e9775b72d24d3d408c57984f69b95eb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1810188035}
+    - target: {fileID: 2288784549420201923, guid: 1e9775b72d24d3d408c57984f69b95eb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: JumpToScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288784549420201923, guid: 1e9775b72d24d3d408c57984f69b95eb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288784549420201923, guid: 1e9775b72d24d3d408c57984f69b95eb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
+      value: Hunt_Volcano_Level
       objectReference: {fileID: 0}
     - target: {fileID: 2288784549420201924, guid: 1e9775b72d24d3d408c57984f69b95eb,
         type: 3}

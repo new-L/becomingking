@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hunt.unity
     guid: 7ae07c80f7ab3b74c8451498fbb007f3
+  - enabled: 1
+    path: Assets/Scenes/Hunt_Volcano_Level.unity
+    guid: d8110508afcd57246990aecf36950360
   m_configObjects: {}

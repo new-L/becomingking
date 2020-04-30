@@ -7,6 +7,27 @@ TagManager:
   - HCharacter
   - taskcontroller
   - MainBuilding
+  - PlayerCam
+  - Character
+  - GameBorder
+  - StartLava
+  - PortalIn
+  - PortalOut
+  - Enemy
+  - Trap
+  - Lava
+  - StatsItemRespawn
+  - HealthPickup
+  - EnergyPickup
+  - CointPickup
+  - CurrencyItemPickup
+  - ChessPickup
+  - KeyItemPickup
+  - GoldKey
+  - SilverKey
+  - StartPoint
+  - FinishPoint
+  - DyingTrigger
   layers:
   - Default
   - TransparentFX
@@ -16,13 +37,13 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Character
+  - Collide
+  - Boxes & Barrels
+  - Ground
+  - Enemy
+  - Wall
+  - Portal
   - 
   - 
   - 
