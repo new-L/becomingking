@@ -124,6 +124,7 @@
     <Compile Include="Assets\Scripts\Hunt\Portal.cs" />
     <Compile Include="Assets\Scripts\Hunt\ServerSide\GetPlayerStats.cs" />
     <Compile Include="Assets\Scripts\Hunt\TrapsTrigger.cs" />
+    <Compile Include="Assets\Scripts\Hunt\UI\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Hunt\UI\PlayerBarts.cs" />
     <Compile Include="Assets\Scripts\Hunt\UI\PlayerItemsCount.cs" />
     <Compile Include="Assets\Scripts\Hunt\Unit.cs" />
