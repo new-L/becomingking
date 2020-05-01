@@ -19,6 +19,7 @@ public class ItemRespawn : MonoBehaviour
     [SerializeField] private GameObject[] respawnPoint;
     [SerializeField] private GameObject[] respawnCurrencyPoint;
     [SerializeField] private GameObject[] respawnKeyPoint;
+    [SerializeField] private GameObject[] respawnResourcePoint;
 
     [SerializeField] private GameObject coinPrefab;
     [SerializeField] private GameObject diamondPrefab;
@@ -28,6 +29,8 @@ public class ItemRespawn : MonoBehaviour
 
     [SerializeField] private GameObject goldKeyPrefab;
     [SerializeField] private GameObject silverKeyPrefab;
+    
+    [SerializeField] private GameObject resourcePrefab;
 
 
     private void Start()
@@ -35,7 +38,8 @@ public class ItemRespawn : MonoBehaviour
         respawnPoint = GameObject.FindGameObjectsWithTag("StatsItemRespawn");
         respawnCurrencyPoint = GameObject.FindGameObjectsWithTag("CurrencyItemPickup");
         respawnKeyPoint = GameObject.FindGameObjectsWithTag("KeyItemPickup");
-        foreach(var item in respawnKeyPoint)
+        respawnResourcePoint = GameObject.FindGameObjectsWithTag("ResourcePickup");
+        foreach (var item in respawnKeyPoint)
             respawnKeyPoints.Add(item, false);
         foreach (var item in respawnPoint)
             respawnPoints.Add(item, false);
@@ -53,6 +57,7 @@ public class ItemRespawn : MonoBehaviour
         SpawnKeys();
         Spawn(respawnPoints, m_statsPrefab);
         Spawn(respawnCurrencyPoints, m_currencyPrefab);
+        SpawnResource();
     }
 
 
@@ -76,6 +81,28 @@ public class ItemRespawn : MonoBehaviour
             else
             {
                 random = Random.Range(0, respawnKeyPoint.Length);
+            }
+        }
+    }
+
+    private void SpawnResource()
+    {
+        int randomResourcePosioton = Random.Range(0, respawnResourcePoint.Length);
+        GameObject resource = Instantiate(resourcePrefab, respawnResourcePoint[randomResourcePosioton].transform);
+        resource.transform.position = respawnResourcePoint[randomResourcePosioton].transform.position;
+        resource.SetActive(true);
+        if(Random.Range(0,100) >= 70)
+        {
+            while (true)
+            {
+                int newRandomPosition = Random.Range(0, respawnResourcePoint.Length);
+                if (randomResourcePosioton != newRandomPosition)
+                {
+                    GameObject newResource = Instantiate(resourcePrefab, respawnResourcePoint[newRandomPosition].transform);
+                    newResource.transform.position = respawnResourcePoint[newRandomPosition].transform.position;
+                    newResource.SetActive(true);
+                    break;
+                }
             }
         }
     }

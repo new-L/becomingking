@@ -9,6 +9,7 @@ public class StatsPickupTrigger : MonoBehaviour
     private ItemRespawn m_Respawns;
     private PlayerItemsCount playerUI;
     private FinishPoint finish;
+    private Alert alert;
 
     public bool isPickupItem = false;
     private bool isCoinChessClose = false;
@@ -20,17 +21,25 @@ public class StatsPickupTrigger : MonoBehaviour
         m_Respawns = FindObjectOfType<ItemRespawn>();
         playerUI = FindObjectOfType<PlayerItemsCount>();
         finish = FindObjectOfType<FinishPoint>();
+        alert = FindObjectOfType<Alert>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag.Equals("Character"))
+        if (collision.tag.Equals("Character")) 
+        { 
             isPickupItem = true;
+            playerUI.playerAlert.text = "Нажмите 'E', чтобы поднять";
+            alert.AlertOn();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag.Equals("Character"))
+        {
+            alert.AlertOff();
             isPickupItem = false;
+        }
     }
     private void Update()
     {
@@ -88,8 +97,16 @@ public class StatsPickupTrigger : MonoBehaviour
                     {
                         FinishPoint.silverKey = true;
                         if (FinishPoint.goldKey && FinishPoint.silverKey){ FinishPoint.goalCheck.Add(true); finish.Finish(); }
-                    playerUI.SetColorIcon(playerUI._silverKey, 255, 255, 255, 255);
+                        playerUI.SetColorIcon(playerUI._silverKey, 255, 255, 255, 255);
                         m_Respawns.InActiveItem(gameObject.transform.parent.gameObject, m_Respawns.respawnKeyPoints);
+                        break;
+                    }
+                case "ResourceItem":
+                    {
+                        HuntLevelData.ResourceCount++;
+                        playerUI.SetColorIcon(playerUI._resources, 255, 255, 255, 255);
+                        playerUI.SetText(HuntLevelData.ResourceCount, playerUI._resourcesCount);
+                        gameObject.transform.parent.gameObject.SetActive(false);
                         break;
                     }
             }

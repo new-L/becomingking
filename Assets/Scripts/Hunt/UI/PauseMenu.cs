@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
-        menuPanel.SetActive(false);
+        Resume();
     }
 
     public void Pause()

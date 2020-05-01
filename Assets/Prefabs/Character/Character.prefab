@@ -195,7 +195,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: c4c12a38b31147c43bc5a5909803f7c9, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -310,6 +310,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   portalIn: {fileID: 0}
   portalOut: {fileID: 0}
+  start: {fileID: 0}
   playerDyingCheck: {fileID: 0}
   moveSpeed: 0
   EnergyBarChange:

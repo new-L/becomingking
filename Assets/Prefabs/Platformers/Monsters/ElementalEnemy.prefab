@@ -477,7 +477,8 @@ MonoBehaviour:
   damage: 0
   maxHealth: 0
   currentHealth: 0
-  energy: 0
+  maxEnergy: 0
+  currentEnergy: 0
   isDying: 0
   enemy_Rigidbody: {fileID: 0}
   enemy_Animator: {fileID: 0}
@@ -490,6 +491,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   thePLayer: {fileID: 0}
+  playerUI: {fileID: 0}
+  finish: {fileID: 0}
   TakeTheDamage:
     m_PersistentCalls:
       m_Calls:
