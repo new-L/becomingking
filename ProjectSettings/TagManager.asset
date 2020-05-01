@@ -28,6 +28,8 @@ TagManager:
   - StartPoint
   - FinishPoint
   - DyingTrigger
+  - ResourcePickup
+  - ResourceItem
   layers:
   - Default
   - TransparentFX

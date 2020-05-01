@@ -8,13 +8,16 @@ public class PlayerItemsCount : MonoBehaviour
     public Text
         _coinCount,
         _chessCount,
-        _monsterCount;
+        _monsterCount,
+        _resourcesCount,
+        playerAlert;
     public Image
         _coinIcon,
         _chessIcon,
         _goldeKey,
         _silverKey,
-        _monsters;
+        _monsters,
+        _resources;
     public int monsterCount;
     private GameObject[] enemies;
 
@@ -28,6 +31,7 @@ public class PlayerItemsCount : MonoBehaviour
         SetColorIcon(_monsters, 255, 255, 255, 130);
         monsterCount = enemies.Length;
         _monsterCount.text = "x" + monsterCount;
+        SetColorIcon(_resources, 255, 255, 255, 130);
     }
     public void SetText(int count, Text text) 
     {
