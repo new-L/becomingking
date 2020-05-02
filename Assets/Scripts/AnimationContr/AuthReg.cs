@@ -9,12 +9,6 @@ public class AuthReg : MonoBehaviour
     void Start()
     {
         animatoCreate = gameObject.GetComponent<Animator>();
-        animatoCreate.Play("authorization");
-    }
-
-    private void OnDestroy()
-    {
-        animatoCreate.StopPlayback();
-       
+        animatoCreate.SetTrigger("Active");
     }
 }

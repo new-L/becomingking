@@ -72,6 +72,8 @@ public class PlayerStatement : Unit, IDamageble
     {
         isDying = true;
         animator.SetTrigger("Dying");
+        DyingTrigger respawn = FindObjectOfType<DyingTrigger>();
+        StartCoroutine(respawn.OnEnter());
     }
 
 

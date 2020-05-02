@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Hunt_Volcano_Level.unity
+- path: Assets/Scenes/Registration.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -14145,7 +14145,40 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 399145582}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1388550112}
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Town
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1388550112}
+        m_MethodName: SaveDataOnQuit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Town
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1865203461}
+        m_MethodName: JumpToScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Town
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &399145585
 Animator:
   serializedVersion: 3
@@ -14157,7 +14190,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 887db183f4a7e3140a91467186a3b1fe, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -16455,6 +16488,28 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1388550112}
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Town
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1388550112}
+        m_MethodName: SaveDataOnQuit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Town
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1865203461}
         m_MethodName: JumpToScene
         m_Mode: 5
@@ -16463,7 +16518,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Hunt
+          m_StringArgument: Town
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &445564770
@@ -17281,7 +17336,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 457244995}
   m_LocalRotation: {x: -0, y: -0, z: -0.117450826, w: 0.9930787}
-  m_LocalPosition: {x: 57.711014, y: -0.053788304, z: 62.29297}
+  m_LocalPosition: {x: 57.693, y: -0.13, z: 62.29297}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2105380759}
@@ -26893,7 +26948,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &761940680
 RectTransform:
   m_ObjectHideFlags: 0
@@ -51956,7 +52011,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1388550109
 RectTransform:
   m_ObjectHideFlags: 0
@@ -52027,6 +52082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPanel: {fileID: 761940679}
   pause: {fileID: 1236583153}
+  sendInfo: {fileID: 1821009132}
 --- !u!1001 &1389946367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68048,6 +68104,7 @@ GameObject:
   - component: {fileID: 1821009130}
   - component: {fileID: 1821009129}
   - component: {fileID: 1821009131}
+  - component: {fileID: 1821009132}
   m_Layer: 0
   m_Name: ServerResponse
   m_TagString: Untagged
@@ -68108,6 +68165,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winPanel: {fileID: 1865203464}
+--- !u!114 &1821009132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821009128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b5963f16e7e814c810d6cf9831646e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonusInfo: {fileID: 0}
 --- !u!1001 &1821874630
 PrefabInstance:
   m_ObjectHideFlags: 0

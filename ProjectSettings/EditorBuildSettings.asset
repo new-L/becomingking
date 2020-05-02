@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Town.unity
     guid: 8d5b4a1046ba5f3488bc5ba2b38553de
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Hunt.unity
     guid: 7ae07c80f7ab3b74c8451498fbb007f3
   - enabled: 1

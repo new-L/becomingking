@@ -47,7 +47,7 @@ public class TaskSceneController : MonoBehaviour
         {
             resourceGO.SetActive(true);
             //Устанока background'а
-            backgroundI.sprite = Resources.Load<Sprite>("task_scene/background/task_scene_" + TaskData.TypeResource + "_background_winter");
+            backgroundI.sprite = Resources.Load<Sprite>("task_scene/background/task_scene_" + TaskData.TypeResource + "_background_spring");
             //Установка основных картинок UI
             clickHPI.sprite = Resources.Load<Sprite>("task_scene/ui/task_scene_energy_icon");
             damageI.color = new Color32(255, 255, 255, 0);
@@ -65,7 +65,7 @@ public class TaskSceneController : MonoBehaviour
         else
         {
             //Устанока background'а
-            backgroundI.sprite = Resources.Load<Sprite>("task_scene/background/task_scene_" + TaskData.TypeTask + "_background_winter");
+            backgroundI.sprite = Resources.Load<Sprite>("task_scene/background/task_scene_" + TaskData.TypeTask + "_background_spring");
             //Установка основных картинок UI
             clickHPI.sprite = Resources.Load<Sprite>("task_scene/ui/task_scene_health_icon");
             damageI.color = new Color32(255, 255, 255, 255);
