@@ -19,6 +19,7 @@ public class GetPlayerBuildings : MonoBehaviour
     }
     public IEnumerator BuildingGetter()
     {
+        CoroutinesMaster.Add("PlayerBuildings", false);
         WWWForm form = new WWWForm();
         form.AddField("name", ServerData.GlobalUser);//добавление полей к форме отправления
         UnityWebRequest www = UnityWebRequest.Post(postURLPlayer, form);
@@ -32,6 +33,7 @@ public class GetPlayerBuildings : MonoBehaviour
         {
             string json = JsonHelper.fixJson(www.downloadHandler.text);
             playerBuildings = JsonHelper.FromJson<PlayerBuildings>(json);
+            CoroutinesMaster.EditValue("PlayerBuildings", true);
         }
         if(SceneManager.GetActiveScene().name.Equals("Town")) setBuilding.SetBuildingPlaceInfo();
         timerInfo.GetBuildingsBonus();

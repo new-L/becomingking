@@ -11,6 +11,7 @@ public class SetBonusInfo : MonoBehaviour
     /*Префаб бонуса*/
     [SerializeField] private RectTransform prefab;
     [SerializeField] private NumberConversion conversion;
+    private string m_ruType;
 
     /**/
     [SerializeField] private PopUpMenus menus;
@@ -24,7 +25,6 @@ public class SetBonusInfo : MonoBehaviour
     }
 
 
-    //Вывод мирового рейтинга. Позволяет выводить данные, прежде чем сервер ответит на предыдущий метод
     public void SetBonus()
     {
         menus.Open(bonuspanel);
@@ -46,7 +46,16 @@ public class SetBonusInfo : MonoBehaviour
     {
         BonusPrefabComponents view = new BonusPrefabComponents(viewGameObject.transform);
         view.bonusImage.sprite = Resources.Load<Sprite>("bonus/_bonus_" + model.type);
-        view.bonusCount.text = conversion.NumberConverter(model.bonus).ToString();
+        
+        switch (model.type)
+        {
+            case "allresources": m_ruType = " ед. ресурсов"; break;
+            case "rate": m_ruType = " ед. рейтинга"; break;
+            case "gold": m_ruType = " ед. золота"; break;
+            case "health potion": m_ruType = " ед. зелья"; break;
+        }
+
+        view.bonusCount.text = conversion.NumberConverter(model.bonus).ToString() + m_ruType;
 
     }
 

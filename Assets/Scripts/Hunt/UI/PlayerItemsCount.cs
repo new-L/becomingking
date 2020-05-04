@@ -10,7 +10,9 @@ public class PlayerItemsCount : MonoBehaviour
         _chessCount,
         _monsterCount,
         _resourcesCount,
-        playerAlert;
+        playerAlert,
+        healthPotion,
+        energyPotion;
     public Image
         _coinIcon,
         _chessIcon,
@@ -20,7 +22,7 @@ public class PlayerItemsCount : MonoBehaviour
         _resources;
     public int monsterCount;
     private GameObject[] enemies;
-
+    [SerializeField] private NumberConversion m_convert;
     private void Start()
     {
         SetColorIcon(_coinIcon, 255, 255, 255, 130);
@@ -41,5 +43,11 @@ public class PlayerItemsCount : MonoBehaviour
     public void SetColorIcon(Image icon, byte r, byte g, byte b, byte a)
     {
         icon.color = new Color32(r, g, b, a);
+    }
+
+    public void SetPotionText()
+    {
+        healthPotion.text = m_convert.NumberConverter(GetItemsCharacter.items.healthpotion).ToString();
+        energyPotion.text = m_convert.NumberConverter(GetItemsCharacter.items.energypotion).ToString();
     }
 }

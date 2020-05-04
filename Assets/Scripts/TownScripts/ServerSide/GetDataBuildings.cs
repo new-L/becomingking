@@ -19,6 +19,7 @@ public class GetDataBuildings : MonoBehaviour
 
     public IEnumerator GetBuildings()
     {
+        CoroutinesMaster.Add("DataBuildings", false);
         WWWForm form = new WWWForm();
         form.AddField("name", ServerData.GlobalUser);//добавление полей к форме отправления
         UnityWebRequest www = UnityWebRequest.Post(postURLPlayer, form);
@@ -32,6 +33,7 @@ public class GetDataBuildings : MonoBehaviour
         {
             string json = JsonHelper.fixJson(www.downloadHandler.text);
             dataBuildings = JsonHelper.FromJson<Building>(json);
+            CoroutinesMaster.EditValue("DataBuildings", true);
             StartCoroutine(buildings.BuildingGetter());
         }
     }

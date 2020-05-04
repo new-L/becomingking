@@ -29,6 +29,7 @@ public class PlayerServerResponse : MonoBehaviour
     }
     public IEnumerator Send()
     {
+        CoroutinesMaster.Add("AllData", false);
         foreach (string indexer in dataType)
         {
             WWWForm form = new WWWForm();
@@ -44,6 +45,7 @@ public class PlayerServerResponse : MonoBehaviour
             else
             {
                 inData = JsonUtility.FromJson<InData>(www.downloadHandler.text);
+                CoroutinesMaster.EditValue("AllData", true);
                 DataSave(indexer);
             }
         }

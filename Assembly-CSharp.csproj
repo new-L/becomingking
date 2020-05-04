@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\AnimationContr\PreLoadLogo.cs" />
     <Compile Include="Assets\Scripts\AnimationContr\RegistrAlert\AlertAnimation.cs" />
     <Compile Include="Assets\Scripts\AnimationContr\RegistrAlert\RegistrCreate.cs" />
+    <Compile Include="Assets\Scripts\CoroutinesMaster.cs" />
     <Compile Include="Assets\Scripts\DBManager.cs" />
     <Compile Include="Assets\Scripts\Data\ServerData.cs" />
     <Compile Include="Assets\Scripts\Data\TaskData.cs" />
@@ -122,11 +123,15 @@
     <Compile Include="Assets\Scripts\Hunt\Pickup\ItemRespawn.cs" />
     <Compile Include="Assets\Scripts\Hunt\Pickup\StatsPickupTrigger.cs" />
     <Compile Include="Assets\Scripts\Hunt\Portal.cs" />
+    <Compile Include="Assets\Scripts\Hunt\ServerSide\GetItemsCharacter.cs" />
     <Compile Include="Assets\Scripts\Hunt\ServerSide\GetPlayerStats.cs" />
+    <Compile Include="Assets\Scripts\Hunt\ServerSide\SetDataHunt.cs" />
     <Compile Include="Assets\Scripts\Hunt\TrapsTrigger.cs" />
+    <Compile Include="Assets\Scripts\Hunt\UI\Alert.cs" />
     <Compile Include="Assets\Scripts\Hunt\UI\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Hunt\UI\PlayerBarts.cs" />
     <Compile Include="Assets\Scripts\Hunt\UI\PlayerItemsCount.cs" />
+    <Compile Include="Assets\Scripts\Hunt\UI\WinPanel.cs" />
     <Compile Include="Assets\Scripts\Hunt\Unit.cs" />
     <Compile Include="Assets\Scripts\JsonHelper.cs" />
     <Compile Include="Assets\Scripts\NumberConversion.cs" />

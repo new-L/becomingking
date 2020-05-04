@@ -7,7 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject menuPanel;
     [SerializeField] private Button pause;
-
+    [SerializeField] private SendingBonusInfo sendInfo;
     private void Start()
     {
         Resume();
@@ -36,5 +36,10 @@ public class PauseMenu : MonoBehaviour
     public void UnHighlited(GameObject menuButton)
     {
         menuButton.GetComponent<Animator>().SetInteger("State", 2);
+    }
+
+    public void SaveDataOnQuit()
+    {
+        StartCoroutine(sendInfo.SendOfflineCheck("post"));
     }
 }

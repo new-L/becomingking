@@ -18,7 +18,7 @@ public class GetPlayerStats : MonoBehaviour
     public IEnumerator GetResponse()
     {
         WWWForm form = new WWWForm();
-        form.AddField("name", "newL");//ServerData.GlobalUser);// );
+        form.AddField("name", ServerData.GlobalUser);
         form.AddField("type", "info");//добавление полей к форме отправления
         UnityWebRequest www = UnityWebRequest.Post(postURL, form);
         yield return www.SendWebRequest();//ждем

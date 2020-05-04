@@ -22,6 +22,7 @@ public class GetResourcePlayer : MonoBehaviour
     }
     public IEnumerator ResourceGetter()
     {
+        CoroutinesMaster.Add("PlayerResource", false);
         WWWForm form = new WWWForm();
         form.AddField("name", ServerData.GlobalUser);//добавление полей к форме отправления
         UnityWebRequest www = UnityWebRequest.Post(postURLPlayer, form);
@@ -34,7 +35,7 @@ public class GetResourcePlayer : MonoBehaviour
         else
         {
             string json = JsonHelper.fixJson(www.downloadHandler.text);
-            print(www.downloadHandler.text);
+            CoroutinesMaster.EditValue("PlayerResource", true);
             playerResources = JsonHelper.FromJson<PlayerResources>(json);
         }
         setResource.SetResources();

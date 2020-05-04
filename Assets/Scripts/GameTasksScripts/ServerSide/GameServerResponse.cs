@@ -25,6 +25,7 @@ public class GameServerResponse : MonoBehaviour
     //Общение с сервером(берем данные лвлинга)
     public IEnumerator Send(string type)
     {
+        CoroutinesMaster.Add(type, false);
         WWWForm form = new WWWForm();
         form.AddField("type", type);//добавление полей к форме отправления
         UnityWebRequest www = UnityWebRequest.Post(postURL, form);
@@ -36,9 +37,9 @@ public class GameServerResponse : MonoBehaviour
         }
         else
         {
-            //Debug.Log("Server: " + www.downloadHandler.text);
             string json = JsonHelper.fixJson(www.downloadHandler.text);
             gameData = JsonHelper.FromJson<GameData>(json);
+            CoroutinesMaster.EditValue(type, true);
             yield break;
         }
 

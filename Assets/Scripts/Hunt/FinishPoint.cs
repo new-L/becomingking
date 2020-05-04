@@ -12,6 +12,7 @@ public class FinishPoint : MonoBehaviour
     
     [SerializeField] private WinPanel winPanel;
     [SerializeField] private NumberConversion converter;
+    [SerializeField] private SetDataHunt response;
     private void Start()
     {
         winPanel = FindObjectOfType<WinPanel>();
@@ -22,7 +23,6 @@ public class FinishPoint : MonoBehaviour
 
     public void Finish()
     {
-        print(goalCheck.Count);
         bool flag = true;
         if (goalCheck.Count == 2)
         {
@@ -40,6 +40,7 @@ public class FinishPoint : MonoBehaviour
     {
         if(collision.tag.Equals("Character"))
         {
+            response.SendResponse();
             Time.timeScale = 0;
             m_Win.SetActive(true);
             SetWinInfo();
@@ -48,10 +49,12 @@ public class FinishPoint : MonoBehaviour
 
     private void SetWinInfo()
     {
+        winPanel.m_Exit.SetActive(false);
         winPanel.SetText(winPanel._goldTotal,converter.NumberConverter(2000), "gold");
         winPanel.SetText(winPanel._goldCoin, converter.NumberConverter(HuntLevelData.CoinCount * 10 * GetPlayerStats.playerStats.level).ToString(), "gold");
         winPanel.SetText(winPanel._goldChess, converter.NumberConverter(HuntLevelData.CoinChessCount * 500 * (GetPlayerStats.playerStats.level / 2)).ToString(), "gold");
         winPanel.SetText(winPanel._resourceItem, converter.NumberConverter(HuntLevelData.ResourceCount * GetPlayerStats.playerStats.level).ToString(), "resources");
         winPanel.SetText(winPanel._resourceTotal, converter.NumberConverter(2000).ToString(), "resources");
+        winPanel.SetText(winPanel._ratingText, converter.NumberConverter(GetPlayerStats.playerStats.level + (HuntLevelData.CoinCount * 2) + (HuntLevelData.CoinChessCount * 5) + (HuntLevelData.ResourceCount * 4)).ToString(), "rating");
     }
 }
