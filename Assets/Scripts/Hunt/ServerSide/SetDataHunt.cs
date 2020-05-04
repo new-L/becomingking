@@ -16,8 +16,11 @@ public class SetDataHunt : MonoBehaviour
 
     private IEnumerator SendDataResponse()
     {
+        print(GetItemsCharacter.items.healthpotion);
         WWWForm form = new WWWForm();
-        form.AddField("name", "newL");//ServerData.GlobalUser);
+        form.AddField("name", ServerData.GlobalUser);
+        form.AddField("HPotion", GetItemsCharacter.items.healthpotion);
+        form.AddField("EPotion", GetItemsCharacter.items.energypotion);
         form.AddField("coin_count", HuntLevelData.CoinCount);//добавление полей к форме отправления
         form.AddField("chess_count", HuntLevelData.CoinChessCount);//добавление полей к форме отправления
         form.AddField("resource_count", HuntLevelData.ResourceCount);//добавление полей к форме отправления
@@ -30,6 +33,7 @@ public class SetDataHunt : MonoBehaviour
         }
         else
         {
+            print(www.downloadHandler.text);
             if(www.downloadHandler.text.Equals("All right"))
             {
                 winPanel.m_Exit.SetActive(true);

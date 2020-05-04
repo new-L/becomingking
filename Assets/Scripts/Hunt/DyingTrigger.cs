@@ -9,9 +9,11 @@ public class DyingTrigger : MonoBehaviour
     private PlayerMovement spawn;
     private void Start()
     {
+        HuntLevelData.CoinChessCount = 0;
+        HuntLevelData.CoinCount = 0;
+        HuntLevelData.ResourceCount = 0;
         player = FindObjectOfType<PlayerStatement>();
         spawn  = FindObjectOfType<PlayerMovement>();
-
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

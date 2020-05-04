@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Registration.unity
+- path: "Assets/Scenes/\u0410uthorization.unity"
   isLoaded: 1
   isActive: 1
   isSubScene: 0

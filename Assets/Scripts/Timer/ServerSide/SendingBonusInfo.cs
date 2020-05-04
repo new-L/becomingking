@@ -28,6 +28,7 @@ class SendingBonusInfo : MonoBehaviour
         {
             if (IsOffline && !String.IsNullOrEmpty(www.downloadHandler.text))
             {
+                print(www.downloadHandler.text);
                 string json = JsonHelper.fixJson(www.downloadHandler.text);
                 bonuses = JsonHelper.FromJson<OfflineBonus>(json);
                 bonusInfo.SetBonus();

@@ -8,6 +8,7 @@ public class PlayerStatement : Unit, IDamageble
     [SerializeField] private Animator animator;
 
     private PlayerStats stats;
+    private PlayerItemsCount itemsCount;
 
     public LayerMask wahtIsEnemy;
 
@@ -21,6 +22,7 @@ public class PlayerStatement : Unit, IDamageble
     {
         animator = GetComponent<Animator>();
         stats = GetComponent<PlayerStats>();
+        itemsCount = FindObjectOfType<PlayerItemsCount>();
     }
     public void WriteStats()
     {
@@ -42,7 +44,9 @@ public class PlayerStatement : Unit, IDamageble
                     timeBtwAttack = startTimeBtwAttack;
                 }
             }
-            else timeBtwAttack -= Time.deltaTime;  
+            else timeBtwAttack -= Time.deltaTime;
+            if (Input.GetButtonDown("HealthPotion")) Heal();
+            else if (Input.GetButtonDown("EnergyPotion")) Energy();
         }
     }
 
@@ -76,7 +80,24 @@ public class PlayerStatement : Unit, IDamageble
         StartCoroutine(respawn.OnEnter());
     }
 
-
+    private void Heal()
+    {
+        if(GetItemsCharacter.items.healthpotion > 0)
+        {
+            GetItemsCharacter.items.healthpotion--;
+            stats.AddHealth(maxHealth / 100 * 5);
+            itemsCount.SetPotionText();
+        }
+    }
+    private void Energy()
+    {
+        if (GetItemsCharacter.items.energypotion > 0)
+        {
+            GetItemsCharacter.items.energypotion--;
+            stats.AddEnergy((float)maxEnergy / 100 * 5);
+            itemsCount.SetPotionText();
+        }
+    }
     private void OnDrawGizmosSelected()
     {
         if (atackPoint == null) return;

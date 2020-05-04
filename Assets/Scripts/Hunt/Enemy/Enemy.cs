@@ -161,8 +161,6 @@ public class Enemy : Unit, IDamageble
     {
         isDying = true;
         enemy_Animator.SetTrigger("Dying");
-        Oclussion oclussion = FindObjectOfType<Oclussion>();
-        oclussion.DeleteEnemy(gameObject);
         Destroy(gameObject, 3f);
         playerUI.monsterCount--;
         if (playerUI.monsterCount == 0) { FinishPoint.allMonsters = true; FinishPoint.goalCheck.Add(true); finish.Finish(); }

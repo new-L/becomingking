@@ -103,11 +103,18 @@ public class SetBuildingData : MonoBehaviour
             building_code = rootView.Find("building_code").GetComponent<Text>();
         }
     }
-
+    [SerializeField] private PopUpMenus menus;
+    [SerializeField] private GameObject InfoPanel, alertText;
     //ТекстUI для каждого из компонентов постройки здания
     [SerializeField] private Text buildingNameT, buildingDescriptionT, buildingGoldT, buildingWoodT,
                     buildingRockT, buildingLimestoneT, buildingWheatT, buildingRewardT;
     [SerializeField] private int checkBuildNumberAccess;
+
+    private void Start()
+    {
+        menus.Close(InfoPanel);
+        menus.Open(alertText);
+    }
     //Общая информация о конкретном здании
     public void BuildingData(string building_code)
     {
@@ -115,6 +122,8 @@ public class SetBuildingData : MonoBehaviour
         {
             if (model.code.Equals(building_code))
             {
+                menus.Open(InfoPanel);
+                menus.Close(alertText);
                 checkBuildNumberAccess = 0;
                 SetText(model.name, buildingNameT);
                 SetText(model.description, buildingDescriptionT);

@@ -23,7 +23,6 @@ public class FinishPoint : MonoBehaviour
 
     public void Finish()
     {
-        print(goalCheck.Count);
         bool flag = true;
         if (goalCheck.Count == 2)
         {
@@ -41,10 +40,10 @@ public class FinishPoint : MonoBehaviour
     {
         if(collision.tag.Equals("Character"))
         {
+            response.SendResponse();
             Time.timeScale = 0;
             m_Win.SetActive(true);
             SetWinInfo();
-            response.SendResponse();
         }
     }
 
@@ -57,5 +56,6 @@ public class FinishPoint : MonoBehaviour
         winPanel.SetText(winPanel._resourceItem, converter.NumberConverter(HuntLevelData.ResourceCount * GetPlayerStats.playerStats.level).ToString(), "resources");
         winPanel.SetText(winPanel._resourceTotal, converter.NumberConverter(2000).ToString(), "resources");
         winPanel.SetText(winPanel._ratingText, converter.NumberConverter(GetPlayerStats.playerStats.level + (HuntLevelData.CoinCount * 2) + (HuntLevelData.CoinChessCount * 5) + (HuntLevelData.ResourceCount * 4)).ToString(), "rating");
+        winPanel.SetText(winPanel._obeliskPrecent, HuntLevelData.ObeliskPrecent.ToString(), "precent");
     }
 }
