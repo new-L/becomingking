@@ -30,7 +30,10 @@ public class Authorization : MonoBehaviour
             StartCoroutine(Send());
         }
     }
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return)) AuthUser();
+    }
     private IEnumerator Send()
     {
         WWWForm form = new WWWForm();

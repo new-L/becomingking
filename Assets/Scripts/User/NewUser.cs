@@ -20,7 +20,10 @@ public class NewUser : MonoBehaviour
     {
         alertAnimation = GameObject.Find("Alert").GetComponent<AlertAnimation>();
     }
-
+    private void Update()
+    {
+         if (Input.GetKeyDown(KeyCode.Return)) RegistrUser();
+    }
 
     //Нужно для отправку по нажатию на кнопку
     public void RegistrUser()

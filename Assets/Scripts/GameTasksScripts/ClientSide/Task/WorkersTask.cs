@@ -49,7 +49,6 @@ public class WorkersTask : Task, ITaskRules
     public void SetTypeReward()
     {
         int lengthArrayRes = UnityEngine.Random.Range(0, getResource.playerResources.Length);
-        print(lengthArrayRes);
         TypeReward = getResource.playerResources[lengthArrayRes].code;
         TaskData.TypeResource = TypeReward;
     }

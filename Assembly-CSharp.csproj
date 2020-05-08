@@ -159,6 +159,7 @@
     <Compile Include="Assets\Scripts\TownScripts\ServerSide\GetDataBuildings.cs" />
     <Compile Include="Assets\Scripts\TownScripts\ServerSide\GetPlayerBuildings.cs" />
     <Compile Include="Assets\Scripts\User\Authorization.cs" />
+    <Compile Include="Assets\Scripts\User\BackButton.cs" />
     <Compile Include="Assets\Scripts\User\NewUser.cs" />
     <None Include="Assets\Shaders\Blur.shader" />
     <Reference Include="Unity.Timeline.Editor">

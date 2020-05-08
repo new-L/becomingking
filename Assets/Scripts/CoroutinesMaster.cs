@@ -50,4 +50,9 @@ public class CoroutinesMaster : MonoBehaviour
     }
 
 
+    private void OnDestroy()
+    {
+        coroutinesLoader.Clear();
+    }
+
 }
