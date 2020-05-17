@@ -49,7 +49,6 @@ public class SetRateInfo : MonoBehaviour
         RatingPrefabComponents view = new RatingPrefabComponents(viewGameObject.transform);
         view.place.text = place.ToString();
         view.ratingInfo.text = "Имя: " + rating.name + "\nУровень: " + rating.level.ToString() + "\nРейтинг: " + rating.numberrate.ToString();
-
     }
 
     public class RatingPrefabComponents
