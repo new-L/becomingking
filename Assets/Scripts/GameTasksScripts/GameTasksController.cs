@@ -25,7 +25,7 @@ public class GameTasksController : MonoBehaviour
     }
     [SerializeField] private Army army;
     [SerializeField] private Workers worker;
-    private void CheckTheTaskAccess()
+    public void CheckTheTaskAccess()
     {
         if (!IsInvoking("TimerOnArmy"))
         {
@@ -97,8 +97,8 @@ public class GameTasksController : MonoBehaviour
     }
     private void TimerOnSocial()
     {
-        socialTimer.text = socialTimerSet.ToString();
         socialTimerSet -= 1;
+        socialTimer.text = socialTimerSet.ToString();
         if (socialTimerSet == 0)
         {
             CancelInvoke("TimerOnSocial");
@@ -109,8 +109,8 @@ public class GameTasksController : MonoBehaviour
     }
     private void TimerOnWorker()
     {
-        workerTimer.text = workerTimerSet.ToString();
         workerTimerSet -= 1;
+        workerTimer.text = workerTimerSet.ToString();
         if (workerTimerSet == 0)
         {
             CancelInvoke("TimerOnWorker");
@@ -121,8 +121,8 @@ public class GameTasksController : MonoBehaviour
     }
     private void TimerOnArmy()
     {
-        armyTimer.text = armyTimerSet.ToString();
         armyTimerSet -= 1;
+        armyTimer.text = armyTimerSet.ToString();
         if (armyTimerSet == 0)
         {
             CancelInvoke("TimerOnArmy");

@@ -70,6 +70,7 @@ public class TaskInfoH : MonoBehaviour
                 }
 
         }
+        TaskData.Bonus = false;
         foreach (var model in GetDataBuildings.dataBuildings)
         {
             foreach (var item in getPlayerBuildings.playerBuildings)

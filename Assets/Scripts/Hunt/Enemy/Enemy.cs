@@ -171,7 +171,8 @@ public class Enemy : Unit, IDamageble
 
     public void WriteStat()
     {
-        maxHealth = GetPlayerStats.playerStats.level * 132 + Random.Range(10,100);
+        if (GetPlayerStats.playerStats.level <= 1) maxHealth = 350 + Random.Range(10, 100);
+        else maxHealth = GetPlayerStats.playerStats.level * 132 + Random.Range(10, 100);
         currentHealth = maxHealth;
         damage = GetPlayerStats.playerStats.level * 6 + Random.Range(1, 12);
     }

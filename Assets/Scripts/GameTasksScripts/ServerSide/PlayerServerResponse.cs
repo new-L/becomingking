@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Networking;
 
 public class PlayerServerResponse : MonoBehaviour
@@ -52,15 +53,15 @@ public class PlayerServerResponse : MonoBehaviour
     }
 
 
-
+    public UnityEvent CheckTheAccess;
     private void DataSave(string typeData)
     {
         switch (typeData)
         {
             case "currency": { gold.Count = inData.gold; diamond.Count = inData.diamond; break; }
             case "info": { cLevel.Level = inData.level; cLevel.Exp = inData.xp; break; }
-            case "people": { population.Count = inData.social; army.Count = inData.army; worker.Count = inData.worker;  break; }
-        }
+            case "people": { population.Count = inData.social; army.Count = inData.army; worker.Count = inData.worker; CheckTheAccess.Invoke(); break; }
+        }        
         controller.SetData();
     }
 

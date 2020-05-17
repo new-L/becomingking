@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.Events;
 
 
 //Это нужно чисто для обновления данных ресурсов. Хотя данные мы уже считываем в другому скрипте, было решно не использовать его повторно, т.к. тот скрипт будет использоваться для считывания большого количества данных
@@ -38,13 +39,14 @@ public class UpdatePeopleData : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
     }
 
-
+    public UnityEvent CheckTheAccess;
 
     private void PeopleDataSave()
     {
         population.Count = inData.social; 
         army.Count = inData.army; 
         worker.Count = inData.worker;
+        CheckTheAccess.Invoke();
     }
 
 }

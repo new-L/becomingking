@@ -26,10 +26,10 @@ class SendingBonusInfo : MonoBehaviour
         }
         else
         {
-            if (IsOffline && !String.IsNullOrEmpty(www.downloadHandler.text))
+            if (IsOffline && !www.downloadHandler.text.Equals("[]") && !String.IsNullOrEmpty(www.downloadHandler.text))
             {
-                print(www.downloadHandler.text);
                 string json = JsonHelper.fixJson(www.downloadHandler.text);
+                print(json);
                 bonuses = JsonHelper.FromJson<OfflineBonus>(json);
                 bonusInfo.SetBonus();
             }
@@ -55,7 +55,7 @@ class SendingBonusInfo : MonoBehaviour
         }
         else
         {
-            if(offlineCheckType.Equals("get") && !www.downloadHandler.text.Equals("none"))
+            if(offlineCheckType.Equals("get") && !www.downloadHandler.text.Equals("none") )
             {
                 TimerData.DateTime = DateTime.Parse(www.downloadHandler.text);
                 bonusInfo.OfflineChecker();

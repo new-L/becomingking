@@ -10,15 +10,31 @@ public class CoroutinesMaster : MonoBehaviour
     {
         LoadPanel.SetActive(true);
         InvokeRepeating("Timer", 1f, 1f);
+    
     }
 
+    public void ClearCoroutines()
+    {
+        
+    }
     public static void Add(string name, bool state)
     {
         bool flag = true;
         foreach (var item in coroutinesLoader) {
             if (item.Equals(name)) flag = false;
         }
-        if(flag) coroutinesLoader.Add(name, state);
+        if (flag)
+        {
+            foreach(var item in coroutinesLoader)
+            {
+                if (item.Key.Equals(name))
+                {
+                    coroutinesLoader.Remove(name);
+                    break;
+                }
+            }
+            coroutinesLoader.Add(name, state);
+        }
     }
     private int m_Timer = 2;
     public static void EditValue(string name, bool newState)
