@@ -860,7 +860,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'base game: v0.3.0a'
+  m_Text: 'base game: v0.3.1f'
 --- !u!222 &123875503
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8602,6 +8602,9 @@ MonoBehaviour:
   population: {fileID: 2073982703}
   army: {fileID: 2073982701}
   worker: {fileID: 2073982702}
+  CheckTheAccess:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1525914686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8667,6 +8670,9 @@ MonoBehaviour:
   population: {fileID: 2073982703}
   army: {fileID: 2073982701}
   worker: {fileID: 2073982702}
+  CheckTheAccess:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1525914690
 MonoBehaviour:
   m_ObjectHideFlags: 0

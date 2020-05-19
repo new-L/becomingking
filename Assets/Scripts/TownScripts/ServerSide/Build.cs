@@ -31,7 +31,6 @@ public class Build : MonoBehaviour
         {
             print(www.downloadHandler.text);
         }
-        yield return new WaitForSeconds(0.03f);
         StartCoroutine(getPlayerBuildings.BuildingGetter());
         yield return new WaitForSeconds(0.03f);
         StartCoroutine(serverResponse.Send());
