@@ -86,6 +86,8 @@
     <Compile Include="Assets\Scripts\GameTasksScripts\ClientSide\People\Population.cs" />
     <Compile Include="Assets\Scripts\GameTasksScripts\ClientSide\People\Workers.cs" />
     <Compile Include="Assets\Scripts\GameTasksScripts\ClientSide\Rating\Rating.cs" />
+    <Compile Include="Assets\Scripts\GameTasksScripts\ClientSide\ResPrefabPointer.cs" />
+    <Compile Include="Assets\Scripts\GameTasksScripts\ClientSide\ResourcePrefabInfo.cs" />
     <Compile Include="Assets\Scripts\GameTasksScripts\ClientSide\Task\ArmyTask.cs" />
     <Compile Include="Assets\Scripts\GameTasksScripts\ClientSide\Task\ITaskRules.cs" />
     <Compile Include="Assets\Scripts\GameTasksScripts\ClientSide\Task\SocialTask.cs" />
