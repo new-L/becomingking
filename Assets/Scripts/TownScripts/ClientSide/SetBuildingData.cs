@@ -112,6 +112,10 @@ public class SetBuildingData : MonoBehaviour
 
     private void Start()
     {
+        OpenMenus();
+    }
+    public void OpenMenus()
+    {
         menus.Close(InfoPanel);
         menus.Open(alertText);
     }

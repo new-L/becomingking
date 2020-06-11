@@ -13,10 +13,7 @@ public class CoroutinesMaster : MonoBehaviour
     
     }
 
-    public void ClearCoroutines()
-    {
-        
-    }
+    public void ClearCoroutines() { }
     public static void Add(string name, bool state)
     {
         bool flag = true;
@@ -52,10 +49,10 @@ public class CoroutinesMaster : MonoBehaviour
         }
         else if (m_Timer == 0 && !CheckCoroutines()) 
         {
-            m_Timer = 3;
+            m_Timer = 2;
         }
     }
-    private static bool CheckCoroutines()
+    public static bool CheckCoroutines()
     {
         bool flag = true;
         foreach (var item in coroutinesLoader)

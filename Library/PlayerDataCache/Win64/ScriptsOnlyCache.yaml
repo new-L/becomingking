@@ -1498,7 +1498,7 @@ ScriptsOnlyBuild:
     className: NewUser
   - hash:
       serializedVersion: 2
-      Hash: 7031273fe585d803b3a531116a8a6df1
+      Hash: 61002be8531f404df69ded5430fd6bd6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: IsBuildButton
@@ -1786,7 +1786,7 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
-      Hash: 8de6b5267a87c815bbb4140b3ad1afb5
+      Hash: 987cedf26f2e1b86b83fb5cd213929f1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Build

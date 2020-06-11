@@ -15,12 +15,12 @@ public class PrefabBuildingController : MonoBehaviour
         setData = GameObject.Find("SceneController").GetComponent<SetBuildingData>();
         reBuilding = GameObject.Find("SceneController").GetComponent<ReiterativeBuilding>();
     }
-    private void OnMouseUp()
-    {
-        setData.BuildingData(building_code.text);
-    }
+    //private void OnMouseUp()
+    //{
+    //    setData.BuildingData(building_code.text);
+    //}
 
-    private void OnMouseEnter()
+    public void OnMouseEnterPointer()
     {
         setData.BuildingData(building_code.text);
         gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("buildings_icon/" + building_code.text + "_v1");
@@ -34,7 +34,7 @@ public class PrefabBuildingController : MonoBehaviour
         }
     }
 
-    private void OnMouseExit()
+    public void OnMouseExitPointer()
     {
         setData.BuildingData(building_code.text);
         gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("buildings_icon/" + building_code.text);

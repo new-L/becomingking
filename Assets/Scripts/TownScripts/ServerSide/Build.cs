@@ -12,6 +12,7 @@ public class Build : MonoBehaviour
     [SerializeField] private GetPlayerBuildings getPlayerBuildings;
     [SerializeField] private PopUpMenus popMenus;
     [SerializeField] private GameObject menu;
+    [SerializeField] private IsBuildButton buildButton;
 
     public IEnumerator SendResponse(string option, Button buildB)
     {
@@ -31,13 +32,14 @@ public class Build : MonoBehaviour
         {
             print(www.downloadHandler.text);
         }
+        buildButton.StartLoader();
+        if (menu.activeSelf) popMenus.Close(menu);
         StartCoroutine(getPlayerBuildings.BuildingGetter());
         yield return new WaitForSeconds(0.03f);
         StartCoroutine(serverResponse.Send());
         yield return new WaitForSeconds(0.03f);
         StartCoroutine(resourcePlayer.ResourceGetter());
         yield return new WaitForSeconds(0.03f);
-        if(menu.activeSelf) popMenus.Close(menu);
         buildB.enabled = true;
     }
 }
