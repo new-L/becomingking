@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
@@ -33,13 +32,14 @@ public class Build : MonoBehaviour
             print(www.downloadHandler.text);
         }
         buildButton.StartLoader();
-        if (menu.activeSelf) popMenus.Close(menu);
+        yield return new WaitForSeconds(0.01f);
         StartCoroutine(getPlayerBuildings.BuildingGetter());
         yield return new WaitForSeconds(0.03f);
         StartCoroutine(serverResponse.Send());
         yield return new WaitForSeconds(0.03f);
         StartCoroutine(resourcePlayer.ResourceGetter());
         yield return new WaitForSeconds(0.03f);
+        if (menu.activeSelf) popMenus.Close(menu);
         buildB.enabled = true;
     }
 }
